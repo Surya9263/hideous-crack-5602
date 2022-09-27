@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Pricing from './Pricing_page/Pricing';
+import Pricing from './components/Pricing_page/Pricing';
 
 function App() {
   return (

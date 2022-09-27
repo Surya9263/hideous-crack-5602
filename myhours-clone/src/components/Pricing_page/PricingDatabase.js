@@ -12,6 +12,8 @@ export const FreeList = [
     'Approval workflow with Audit log',
     'Extra features…',
   ];
+
+ 
   
   export const Track = [
     { title: 'Timer or add manually', free: true, pro: true },
@@ -78,6 +80,8 @@ export const FreeList = [
     { title: 'Zapier integration', free: true, pro: true },
     { title: 'Quickbooks native integration', free: false, pro: true },
   ];
+
+  export const fdata =[{d:Track,title:"Track"},{d:Organize,title:"Organize"},{d:Biling,title:"Biling"},{d:Report,title:"Report"},{d:Team,title:"Team"}]
   export const Frequently_asked_questions = [
     {
       question: 'Will I be charged after the 14 day trial?',

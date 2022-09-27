@@ -1,3 +1,7 @@
+*{
+  font-family: Avenir Next, sans-serif;
+}
+
 .heading1 {
     margin-bottom: 20px;
     font-family: Avenirnextltpro,sans-serif;
@@ -22,7 +26,7 @@
 .heading4{
     color: #212529;
   font-size: 20px;
-  margin: 10px 0 0;
+  margin: 10px 5rem 10px 0;
   line-height: 1.2;
 }
 .dollar1{
@@ -44,20 +48,73 @@
   margin: 0 0 20px;
   /* list-style-type: circle; */
 }
-.pbtn{
- 
+.pbtn ,.pbtn2{
         display: block;
         width: 100%;
         text-align: center;
-        border: 1px solid black;
         font-size: 1.1rem;
         padding:0.6rem 0;
         border-radius: 0.3rem;
-        background-color: #fff;
-   
+   margin-bottom: 2rem;
+   margin-top: 1rem;
+}
+.pbtn{
+  background-color: #fff;
+  border: 1px solid black;
+
+
+}
+.pbtn2{
+  background-color: #3b8fc2;
+  color: #fff;
+border:none
 }
 .pbtn:hover {
     border-color: #3b8fc2;
     background-color: #3b8fc2;
     color: #fff;
+}
+.pbtn2:hover {
+    /* border-color: #3b8fc2; */
+    background-color: #1a6b9e;
+    color: #fff;
+}
+
+th,td{
+
+  /* border: 1px solid yellow; */
+  border-bottom:0.5px solid rgb(230, 219, 219);
+  padding: 1rem 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+
+
+  /* background-color: grey; */
+
+}
+
+th{
+  font-size: 1.5rem;
+  font-weight: 300;
+  width:"100%"
+}
+tr{
+  word-spacing: 0;
+  letter-spacing: 0.3px;
+  width:"100%"
+
+  /* background-color: rgba(245, 245, 245, 0.753); */
+}
+.bagcoltab td{
+  background-color: rgba(245, 245, 245, 0.829);
+  border:"none";
+  width: 100%;
+}
+.headFaq {
+  margin-bottom: 20px;
+  font-family: 'Avenir Next',sans-serif;
+  color: #375d75;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
 }

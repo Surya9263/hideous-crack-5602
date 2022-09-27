@@ -1,12 +1,43 @@
 import React from "react";
 import style from "./Pricing.module.css";
-import { Box, Heading, Container, Text, SimpleGrid, Button } from "@chakra-ui/react";
-import { FreeList } from "./PricingDatabase";
+import {
+  Box,
+  Heading,
+  Container,
+  Text,
+  SimpleGrid,
+  Button,
+  TableContainer,
+  Table,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  border,
+  Stack,
+  VStack,
+} from "@chakra-ui/react";
+import { GrCheckmark } from "react-icons/gr";
+import { FiChevronDown } from "react-icons/fi";
+import {
+  Biling,
+  fdata,
+  FreeList,
+  Organize,
+  ProList,
+  Track,
+  Report,
+  Frequently_asked_questions,
+} from "./PricingDatabase";
 
 function Pricing() {
   return (
-    <Box maxW={["100%","90%","80%"]} style={{ height: "100vh",margin:"auto" }}>
-      <Container >
+    <Box
+      maxW={["100%", "90%", "80%"]}
+      style={{ height: "100vh", margin: "auto" }}
+    >
+      <Container>
         {/* headers */}
         <Box>
           <Text className={style.heading1}>Pick your plan</Text>
@@ -15,27 +46,131 @@ function Pricing() {
           </Heading>
         </Box>
         {/* headers */}
-        <SimpleGrid columns={1} spacingX="40px" spacingY="20px">
-          <Box  >
-          <Text className={style.heading3}>Free</Text>
-            <Text className={style.heading4} >
+        <SimpleGrid columns={2} gap="9rem">
+          <Box>
+            <Text className={style.heading3}>Free</Text>
+            <Text className={style.heading4}>
               For indivisuals or teams just getting started with time tracking.
             </Text>
-            <br />
-            <Text className={style.dollar1}>$<span className={style.dollar2}>0</span></Text>
-            
+
+            <Text className={style.dollar1}>
+              $<span className={style.dollar2}>0</span>
+            </Text>
+
             <br />
             {/* <br /> */}
-            
+
             <ul>
               {FreeList.map((e, i) => (
-                <li className={style.list} key={i}>{e}</li>
+                <li className={style.list} key={i}>
+                  {e}
+                </li>
               ))}
             </ul>
-            |<Button className={style.pbtn}>Select</Button>
+            <Button style={{ marginTop: "4.5rem" }} className={style.pbtn}>
+              Select
+            </Button>
           </Box>
-          <Box bg="tomato" height="80px"></Box>
+          <Box>
+            <Text className={style.heading3}>Free</Text>
+            <Text className={style.heading4}>
+              For indivisuals or teams just getting started with time tracking.
+            </Text>
+            <Box style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+              <Box>
+                {" "}
+                <Text className={style.dollar1}>
+                  $<span className={style.dollar2}>6</span>
+                </Text>
+              </Box>
+              <Box style={{ fontWeight: "600", color: "GrayText" }}>
+                <p>
+                  <i>- per active team member, per month billed annually</i>
+                </p>
+                <p>
+                  <i>- $7 billed monthly</i>
+                </p>
+              </Box>
+            </Box>
+
+            <ul>
+              {ProList.map((e, i) => (
+                <li className={style.list} key={i}>
+                  {i === 0 ? <i>{e}</i> : e}
+                </li>
+              ))}
+            </ul>
+            <Button className={style.pbtn2}>14 day free trial</Button>
+          </Box>
         </SimpleGrid>
+{/* Features */}
+        <Box textAlign="start" w={"100%"}>
+          <TableContainer>
+            <Table variant="simple">
+              <Thead>
+                <Tr padding="1rem 0">
+                  <Th border="none" textAlign={"start"} w={"100%"}>
+                    Feature
+                  </Th>
+                  <Th p="0 2rem" border="none">
+                    Free
+                  </Th>
+                  <Th p="0 2rem" border="none">
+                    Pro
+                  </Th>
+                </Tr>
+              </Thead>
+
+              <Tbody width={"100%"}>
+                {/* feature */}
+
+                {fdata.map((data) => (
+                  <>
+                    <Tr className={style.bagcoltab}>
+                      <Td border="none" fontWeight="600">
+                        {data.title}
+                      </Td>
+                      <Td border="none" />
+                      <Td border="none" />
+                    </Tr>
+
+                    {data.d.map((e) => (
+                      <Tr>
+                        <Td>{e.title}</Td>
+                        <Td textAlign={"center"} fontSize="1.3rem">
+                          {e.free ? <GrCheckmark /> : ""}
+                        </Td>
+                        <Td textAlign={"center"} fontSize="1.3rem">
+                          {e.pro ? <GrCheckmark /> : ""}
+                        </Td>
+                      </Tr>
+                    ))}
+                    <br />
+                    <br />
+                  </>
+                ))}
+              </Tbody>
+            </Table>
+          </TableContainer>
+        </Box>
+
+
+        {/* FAQ */}
+        <Box width="80%" m="auto" border="solid">
+        <Box className={style.headFaq}><Text>Frequently Asked Questions</Text> </Box>
+        {/* qns */}
+        {
+          Frequently_asked_questions.map(e=>
+            
+        <Box display="flex" justifyContent="space-between"p="1rem">
+          <Box>{e.question}</Box>
+          <Box fontSize="1.3rem" color="grey"><FiChevronDown/></Box>
+        </Box>
+            )
+        }
+          
+        </Box>
+        
       </Container>
     </Box>
   );
