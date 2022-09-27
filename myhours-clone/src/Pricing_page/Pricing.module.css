@@ -1,0 +1,63 @@
+.heading1 {
+    margin-bottom: 20px;
+    font-family: Avenirnextltpro,sans-serif;
+    color: #212529;
+    font-size: 72px;
+    font-weight: lighter;
+    text-align: center;
+}
+.heading2{
+    margin-bottom: 20px;
+  font-family: Avenir Next, sans-serif;
+  color: #375d75;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+.heading3{
+    font-size: 2rem;
+  color: #212529;
+  font-weight: bold;
+}
+.heading4{
+    color: #212529;
+  font-size: 20px;
+  margin: 10px 0 0;
+  line-height: 1.2;
+}
+.dollar1{
+    font-size: 40px;
+    font-family: Avernirnextitpro, sans-serif;
+    color: #212529;
+}
+.dollar2{
+    font-size: 80px;
+  font-family: Avernirnextitpro, sans-serif;
+  font-weight: 800;
+
+  color: #212529;
+}
+.list{
+    font-size: 18px;
+  font-family: Avernirnextitpro, sans-serif;
+  color: #212529;
+  margin: 0 0 20px;
+  /* list-style-type: circle; */
+}
+.pbtn{
+ 
+        display: block;
+        width: 100%;
+        text-align: center;
+        border: 1px solid black;
+        font-size: 1.1rem;
+        padding:0.6rem 0;
+        border-radius: 0.3rem;
+        background-color: #fff;
+   
+}
+.pbtn:hover {
+    border-color: #3b8fc2;
+    background-color: #3b8fc2;
+    color: #fff;
+}
