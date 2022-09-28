@@ -136,37 +136,39 @@ Our software <span style={{textDecoration:"underline"}}>does not include employe
     <Flex justifyContent="center" gap="10px" fontSize="18px" textAlign="left">
         <Box w="22%">
             <Text>
-            "Easy tracking of billable hours across various projects. Makes time tracking for different tasks simple."
+            "Easy tracking of billable hours across various projects.<span className={style.textGradient}> Makes time tracking for different tasks simple."</span>
             </Text>
             <Text mt="15px" fontWeight="bold" fontStyle="italic">- Paul H., Business Owner</Text>
         </Box>
         <Box w="22%">
         <Text>
-        "My Hours is great for keeping track of time spent on different projects. It makes completing my mandatory timesheets at the end of the week WAY FASTER."
+        "My Hours is great for keeping track of time spent on different projects. It makes completing my mandatory timesheets at the end of the week<span className={style.textGradient}> WAY FASTER."</span>
             </Text>
             <Text mt="15px" fontWeight="bold" fontStyle="italic">- Michael B., Manager</Text>
         </Box>
         <Box w="22%">
         <Text>
-        "I've enjoyed using My Hours, and I use it every day. Great tool for tracking my time!"            </Text>
+        "I've enjoyed using My Hours, and I use it every day. <span className={style.textGradient}>Great tool for tracking my time!" </span>
+        </Text>
             <Text mt="15px" fontWeight="bold" fontStyle="italic">‍- Cody H., Engineer</Text>
         </Box>
     </Flex>
     <Flex justifyContent="center" gap="10px" fontSize="18px" textAlign="left" my="20px">
         <Box w="22%">
             <Text>
-            "Ease of use, simplicity, streamlined, it really helped me get my hour tracking in order. No negatives for the purpose and scope for which I am using the software."
+            "Ease of use, simplicity, streamlined, <span className={style.textGradient}>it really helped me get my hour tracking in order.</span> No negatives for the purpose and scope for which I am using the software."
             </Text>
             <Text mt="15px" fontWeight="bold" fontStyle="italic">‍- Arieh F., CFO</Text>
         </Box>
         <Box w="22%">
         <Text>
-        "The software is very easy to set up, and you can start using it right away to track your time, assigning different hourly rates for different types of work."            </Text>
+        "The software is very easy to set up, and you can start using it right away to track your time, <span className={style.textGradient}>assigning different hourly rates for different types of work."</span>
+        </Text>
             <Text mt="15px" fontWeight="bold" fontStyle="italic">‍- Naomi S., Marketing Manager</Text>
         </Box>
         <Box w="22%">
         <Text>
-        "Simple to use, perfect for the price, genuinely the best hour tracker I've used yet."            
+        "Simple to use, perfect for the price, <span className={style.textGradient}>genuinely the best hour tracker I've used yet."</span>            
         </Text>
             <Text mt="15px" fontWeight="bold" fontStyle="italic">‍- Leah M., Engineer</Text>
         </Box>
@@ -174,18 +176,18 @@ Our software <span style={{textDecoration:"underline"}}>does not include employe
     <Flex justifyContent="center" gap="10px" fontSize="18px" textAlign="left">
         <Box w="22%">
             <Text>
-                "Easy to use for my team members who are remote but hourly. My House provides a simple and easy way to record, track and manage activity."
+            <span className={style.textGradient}>"Easy to use for my team members who are remote but hourly.</span> My House provides a simple and easy way to record, track and manage activity."
             </Text>
             <Text mt="15px" fontWeight="bold" fontStyle="italic">‍- Thomas S., Head of Customer Success</Text>
         </Box>
         <Box w="22%">
         <Text>
-        "I really love this time tracking software. It keeps track of all my hours and is really easy to use. I would definitely recommend this software. There is nothing that I don't like about this software."            </Text>
+        "I really love this time tracking software.<span className={style.textGradient}> It keeps track of all my hours and is really easy to use.</span> I would definitely recommend this software. There is nothing that I don't like about this software."            </Text>
             <Text mt="15px" fontWeight="bold" fontStyle="italic">‍- Christina C., Paralegal</Text>
         </Box>
         <Box w="22%">
         <Text>
-        "I love that I can track my hours and use it to generate meaningful reports to measure time spent. It's intuitive, easy-to-use, and highly customizable."        </Text>
+        "I love that I can track my hours and use it to <span className={style.textGradient}>generate meaningful reports</span> to measure time spent. It's intuitive, easy-to-use, and highly customizable."        </Text>
             <Text mt="15px" fontWeight="bold" fontStyle="italic">‍‍- Kristen B., Bussines Owner</Text>
         </Box>
     </Flex>

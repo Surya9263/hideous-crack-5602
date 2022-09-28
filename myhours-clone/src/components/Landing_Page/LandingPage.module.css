@@ -41,3 +41,7 @@ text-decoration: none;
 .talkToTeamBtn{
     border: 2px solid rgb(55, 93, 117);
 }
+
+.textGradient{
+    background: linear-gradient(to bottom right,#79bf94,transparent);
+  }
