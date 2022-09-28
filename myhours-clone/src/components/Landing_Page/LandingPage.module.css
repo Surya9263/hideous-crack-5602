@@ -1,0 +1,43 @@
+/* @media all and (min-width:480px) and (max-width:720px){
+    div{
+        background-color: red;
+    }
+} */
+
+.parent{
+    width:68%;
+    /* border: 1px solid; */
+    margin: auto;
+    text-align: center;
+}
+
+.getStartedbtn{
+    background-color: #3b8fc2;
+    border: none;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.linkToWorking{
+    color:rgb(59, 143, 194);
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.linkToWorking:hover{
+text-decoration: none;
+}
+
+.anchorTagsHover{
+    text-decoration: underline;
+}
+.anchorTagsHover:hover{
+    text-decoration: none;
+}
+
+.talkToTeamBtn{
+    border: 2px solid rgb(55, 93, 117);
+}

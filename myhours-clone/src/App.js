@@ -4,15 +4,17 @@ import Login from './AuthPages/SignIn';
 import Signup from './AuthPages/SignUp';
 import Terms from './AuthPages/Terms';
 import Success from './AuthPages/Success';
+import LandingPage from './components/Landing_Page/LandingPage';
 
 function App() {
   return (
     <div>
-     <Pricing/>
+      <LandingPage/>
+     {/* <Pricing/> */}
      {/* <Login/>
      <Signup/>
      <Terms/> */}
-     <Success/>
+     {/* <Success/> */}
     </div>
   );
 }
