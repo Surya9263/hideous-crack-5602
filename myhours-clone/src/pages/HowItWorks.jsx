@@ -4,6 +4,8 @@ import ReactPlayer from "react-player";
 import Features from '../components/how-it-works/Features';
 import Steps from '../components/how-it-works/Steps';
 import Supports from '../components/how-it-works/Supports';
+import { Link } from 'react-router-dom';
+import { BsCheck } from 'react-icons/bs';
 
 const featuresData = [
 	{
@@ -79,11 +81,11 @@ const HowItWorks = () => {
     <>
     <Flex textAlign={'center'} alignItems='center' width="85%" margin={'auto'} mt={20} gap={8} direction='column'>
 	<Text fontSize={'6xl'}>How it works</Text>
-	<Heading fontSize={'4xl'}>& why you should switch to My Hours</Heading>
-	<Text fontSize={'3xl'}>Time tracking was a pain. We fixed it and made time tracking worth the effort. My Hours is easy to use and gets the most out of your data with powerful reporting. Teams that use My Hours are more productive, efficient and organized.</Text>
+	<Heading fontSize={'4xl'} color='rgb(54,92,117)'>& why you should switch to My Hours</Heading>
+	<Text fontSize={'3xl'} color='rgb(54,92,117)'>Time tracking was a pain. We fixed it and made time tracking worth the effort. My Hours is easy to use and gets the most out of your data with powerful reporting. Teams that use My Hours are more productive, efficient and organized.</Text>
 	<Button width={52} bg='rgb(59,143,194)' color={'white'} size='lg'>Get Startde - It's Free</Button>	
     </Flex>
-    <Flex width={[400, 600, 600, 700, 900]} height={[312, 412, 412, 462, 580]}  margin="auto" mt={20} mb={20} p={4}>
+    <Flex width={[300, 500, 600, 700, 900]} height={[300, 412, 412, 462, 580]}  margin="auto" mt={20} mb={20} p={4}>
         <Box boxShadow='2xl' width={'100%'} height={'100%'}>
 	  <ReactPlayer url="https://youtu.be/VpMysclixyQ" controls width={'100%'} height={'100%'} />
 	  </Box>
@@ -98,11 +100,49 @@ const HowItWorks = () => {
 		<Steps {...steps}/>
 	))}
     </Box>
-    {/* <Flex p={14} gap={24}>
+    <Flex p={[8, 14]} gap={24} direction={['column', 'row']} mt={10}>
 	{SupportData.map((support)=>(
 		<Supports {...support}/>
 	))}
-    </Flex> */}
+    </Flex>
+    <Box width={'75%'} margin='auto' textAlign={'center'} mt={20}>
+	<Heading fontSize={'30px'} textDecoration='underline'>No, you cannot spy on your employees with My Hours</Heading>
+	<Text fontSize={'20px'} mt={6}>My Hours does not record your or your employees’ screens. No screenshots, no apps tracked, no employee monitoring. Of course, you are free to view work logs that your team members have entered.</Text>
+    </Box>
+    
+    <Box width={'75%'} margin='auto' textAlign={'center'} mt={40}>
+	<Link to="features">
+		<Heading fontSize={'30px'} textDecoration="underline" color={'rgb(54,92,117)'} cursor='pointer' _hover={{'textDecoration': "none"}}>Take a look at the complete list of features in My Hours.</Heading>
+	</Link>
+	<Text color={'rgb(54,92,117)'} fontSize='2xl' mt={10}>Or simply try it out: </Text>
+	<Button bg={'rgb(59,142,195)'} mt={10} size='lg' color='white'>Get Started - It's Free</Button>
+    </Box>
+
+    <Box margin='auto' textAlign={'center'} mt={40} mb={40} >
+	<Heading color={'rgb(54,92,117)'}>Have questions? We're here</Heading>
+	<Text width={['95%','62%']} margin='auto' fontSize='20px' mt={10}>It's always nice to have someone to talk to when facing new software. Get in touch and we'll try our best to help you out.</Text>
+
+	<Flex gap={6} justifyContent='center' direction={['column','column', 'row']} mt={6}>
+	<Link to="#">
+	      <Flex alignItems='center' color={'rgb(59,142,195)'} justifyContent='center'>
+		<BsCheck fontSize={'30px'}/>
+		<Text fontSize={'20px'} textDecoration="underline" cursor='pointer' _hover={{'textDecoration': "none"}} >EMAIL & LIVE CHAT</Text>
+	      </Flex>
+	</Link>
+	<Link to="#">
+		<Flex alignItems='center' color={'rgb(59,142,195)'} justifyContent='center'>
+		<BsCheck fontSize={'30px'}/>
+		<Text fontSize={'20px'} textDecoration="underline" cursor='pointer' _hover={{'textDecoration': "none"}} >TRAINNIG FOR TEAMS</Text>
+		</Flex>
+	</Link>
+	<Link to="#">
+		<Flex alignItems='center' color={'rgb(59,142,195)'} justifyContent='center'>
+		<BsCheck fontSize={'30px'}/>
+		<Text fontSize={'20px'} textDecoration="underline" cursor='pointer' _hover={{'textDecoration': "none"}}>KNOWLEDGE BASE</Text>
+		</Flex>
+	</Link>
+	</Flex>
+    </Box>
     </>
   )
 }

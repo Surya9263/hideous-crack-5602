@@ -7,7 +7,7 @@ const Supports = ({ title, description, supportImg }) => {
 	<Box width={'100%'}>
 	 <Heading fontSize={'30px'} fontWeight={500}>{title}</Heading>
 	 <Text fontSize='20px' mt={6}>{description}</Text>
-	 <Img src={supportImg} alt='' width={'70%'} margin='auto' mt={8}/>
+	 <Img src={supportImg} alt='' width={['95%','70%']} margin='auto' mt={8}/>
 	</Box>
     </>
   )
