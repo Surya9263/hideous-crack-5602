@@ -53,7 +53,7 @@ import {
                 <Box w="100%">
                   <FormControl id="fullname" isRequired>
                     <FormLabel>Full Name</FormLabel>
-                    <p style={{float:"left",fontWeight:"2000"}}>So we know what to call you in the app</p>
+                    <p style={{float:"left",fontWeight:"2000",fontSize:"12px"}}>So we know what to call you in the app</p>
                     {/* //************************************************************************  */}
                     <Input type="text" />
                   </FormControl>
@@ -62,7 +62,7 @@ import {
               </HStack>
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
-                <p style={{float:"left",fontWeight:"2200"}}>You will use this email to login</p>
+                <p style={{float:"left",fontWeight:"2200",fontSize:"12px"}}>You will use this email to login</p>
                     {/* //********************************************************************************  */}
                  
                 <Input type="email" />
