@@ -1,5 +1,6 @@
 *{
   font-family: Avenir Next, sans-serif;
+
 }
 
 .heading1 {
@@ -49,7 +50,7 @@
   /* list-style-type: circle; */
 }
 .pbtn ,.pbtn2{
-        display: block;
+        /* display: block; */
         width: 100%;
         text-align: center;
         font-size: 1.1rem;
@@ -61,8 +62,6 @@
 .pbtn{
   background-color: #fff;
   border: 1px solid black;
-
-
 }
 .pbtn2{
   background-color: #3b8fc2;
@@ -94,7 +93,7 @@ th,td{
 }
 
 th{
-  font-size: 1.5rem;
+
   font-weight: 300;
   width:"100%"
 }
@@ -117,4 +116,66 @@ tr{
   font-size: 40px;
   font-weight: 600;
   text-align: center;
+}
+
+.readbox{
+  padding: 40px 95px;
+  font-size: 56px;
+  line-height: 67px;
+}
+.quatation{
+  font-weight: 50;
+}
+.kelvin{
+  padding-bottom: 0;
+    font-family: 'Avenir Next',sans-serif;
+    color: #375d75;
+    font-size: 20px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 600;
+    text-align: left;
+}
+.link,.link2{
+color: #3b8fc2;
+    font-style: normal;
+  font-size: 1.1rem;
+  font-weight:400;
+  text-decoration: underline;
+  /* background-color: transparent;
+    color: #000;
+    text-decoration: underline; */
+}
+.link2{
+  margin: 0 2rem;
+  font-size: 1rem;
+}
+.num{
+  color: #375d75;
+  font-size: 72px;
+  line-height: 86px;
+  font-weight: 100;
+  
+}
+.num>span{
+  color: #3b8fc2;
+}
+.ul{
+  padding-left: 1.5rem;
+}
+.b{
+  background-color: rgba(152, 226, 248, 0.404);
+  border-radius: 0.5rem;
+}
+.b1{
+  background-color:rgba(247, 235, 170, 0.329);
+}
+.b2{
+  background-color: #f1f4f7;
+}
+.underline{
+  text-decoration: underline;
+  font-weight: 500;
+  color: black;
+  margin-right: 0.3rem;
 }

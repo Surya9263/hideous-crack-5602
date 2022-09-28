@@ -16,7 +16,7 @@ function FAQ() {
     setdata(updated);
   }
   return (
-    <Box width="80%" m="auto" border="solid">
+    <Box width="90%" m="auto" >
       <Box className={style.headFaq}>
         <Text>Frequently Asked Questions</Text>{" "}
       </Box>
