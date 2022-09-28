@@ -166,7 +166,7 @@ function Pricing() {
           <Box>{e.question}</Box>
           <Box fontSize="1.3rem" color="grey"><FiChevronDown/></Box>
         </Box>
-            )
+            )g
         }
           
         </Box>
