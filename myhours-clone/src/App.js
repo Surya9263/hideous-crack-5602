@@ -7,7 +7,7 @@ import Terms from './AuthPages/Terms';
 
 function App() {
   return (
-    <div className="App">
+    <div>
      {/* <Pricing/> */}
      <Login/>
      <Signup/>
