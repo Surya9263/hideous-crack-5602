@@ -1,0 +1,181 @@
+*{
+  font-family: Avenir Next, sans-serif;
+
+}
+
+.heading1 {
+    margin-bottom: 20px;
+    font-family: Avenirnextltpro,sans-serif;
+    color: #212529;
+    font-size: 72px;
+    font-weight: lighter;
+    text-align: center;
+}
+.heading2{
+    margin-bottom: 20px;
+  font-family: Avenir Next, sans-serif;
+  color: #375d75;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+.heading3{
+    font-size: 2rem;
+  color: #212529;
+  font-weight: bold;
+}
+.heading4{
+    color: #212529;
+  font-size: 20px;
+  margin: 10px 5rem 10px 0;
+  line-height: 1.2;
+}
+.dollar1{
+    font-size: 40px;
+    font-family: Avernirnextitpro, sans-serif;
+    color: #212529;
+}
+.dollar2{
+    font-size: 80px;
+  font-family: Avernirnextitpro, sans-serif;
+  font-weight: 800;
+
+  color: #212529;
+}
+.list{
+    font-size: 18px;
+  font-family: Avernirnextitpro, sans-serif;
+  color: #212529;
+  margin: 0 0 20px;
+  /* list-style-type: circle; */
+}
+.pbtn ,.pbtn2{
+        /* display: block; */
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+        padding:0.6rem 0;
+        border-radius: 0.3rem;
+   margin-bottom: 2rem;
+   margin-top: 1rem;
+}
+.pbtn{
+  background-color: #fff;
+  border: 1px solid black;
+}
+.pbtn2{
+  background-color: #3b8fc2;
+  color: #fff;
+border:none
+}
+.pbtn:hover {
+    border-color: #3b8fc2;
+    background-color: #3b8fc2;
+    color: #fff;
+}
+.pbtn2:hover {
+    /* border-color: #3b8fc2; */
+    background-color: #1a6b9e;
+    color: #fff;
+}
+
+th,td{
+
+  /* border: 1px solid yellow; */
+  border-bottom:0.5px solid rgb(230, 219, 219);
+  padding: 1rem 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+
+
+  /* background-color: grey; */
+
+}
+
+th{
+
+  font-weight: 300;
+  width:"100%"
+}
+tr{
+  word-spacing: 0;
+  letter-spacing: 0.3px;
+  width:"100%"
+
+  /* background-color: rgba(245, 245, 245, 0.753); */
+}
+.bagcoltab td{
+  background-color: rgba(245, 245, 245, 0.829);
+  border:"none";
+  width: 100%;
+}
+.headFaq {
+  margin-bottom: 20px;
+  font-family: 'Avenir Next',sans-serif;
+  color: #375d75;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.readbox{
+  padding: 40px 95px;
+  font-size: 56px;
+  line-height: 67px;
+}
+.quatation{
+  font-weight: 50;
+}
+.kelvin{
+  padding-bottom: 0;
+    font-family: 'Avenir Next',sans-serif;
+    color: #375d75;
+    font-size: 20px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 600;
+    text-align: left;
+}
+.link,.link2{
+color: #3b8fc2;
+    font-style: normal;
+  font-size: 1.1rem;
+  font-weight:400;
+  text-decoration: underline;
+  /* background-color: transparent;
+    color: #000;
+    text-decoration: underline; */
+}
+.link2{
+  margin: 0 2rem;
+  font-size: 1rem;
+}
+.num{
+  color: #375d75;
+  font-size: 72px;
+  line-height: 86px;
+  font-weight: 100;
+  
+}
+.num>span{
+  color: #3b8fc2;
+}
+.ul{
+  padding-left: 1.5rem;
+}
+.b{
+  background-color: rgba(152, 226, 248, 0.404);
+  border-radius: 0.5rem;
+}
+.b1{
+  background-color:rgba(247, 235, 170, 0.329);
+}
+.b2{
+  background-color: #f1f4f7;
+}
+.underline{
+  text-decoration: underline;
+  font-weight: 500;
+  color: black;
+  margin-right: 0.3rem;
+}

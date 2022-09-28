@@ -7,7 +7,8 @@ export default function Navbar() {
 
   const [active, setActive] = useState(false)
   const [size, setsize] = useState(window.innerWidth)
-  const [screen, setscreen] = useState()
+  const [screen, setscreen] = useState(window.innerHeight)
+  console.log(screen)
 
   const checksize = () => {
    setsize(window.innerWidth)
@@ -72,7 +73,7 @@ export default function Navbar() {
   
   
     {
-      (size > 1100) == false &&  <div 
+      (size > 1200) == false &&  <div 
       style={{transform:active? "translateY(0%)":"translateY(-100%)"}}
       className={styles.dropdown}>
         <p className={styles.para}>

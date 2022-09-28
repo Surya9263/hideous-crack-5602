@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# My Hours Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This collaborative project is a clone of the [MyHours](https://myhours.com) website. We as a team of 5 members cloned this website during our Unit 5 construct project week in Masai School, Bangalore.
 
-## Available Scripts
+"My Hours is an Easy tracking of billable hours across various projects. Makes time tracking for different tasks simple."
 
-In the project directory, you can run:
+## Deployed Site
 
-### `npm start`
+[My Hours clone](link to be add)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Presentation Video
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Presentation](presentation link)
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Login / Sign-Up page with user's authentication
+- Different pages for information of websites are like How it works, Use cases, Pricing, Support.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- HTML | CSS | JavaScript | React 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Libraries Used
 
-### `npm run eject`
+- Chakra UI
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributors
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [@SURYA SRIVASTAV](GITHUBLINK)
+- [@PUSHPARAJ PATEL](https://github.com/pushpraj15295)
+- [@SHRIDHAR R HAKKE](https://github.com/Shridhar1998)
+- [@UTKARSH GUPTA](https://github.com/utkarshqw)
+- [@DINESH KARDE](https://github.com/captain-programming)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Website Sneak Peeks
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Sneak Peeks on Large Devices
 
-## Learn More
+- **Landing Page**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ![Homepage](./Website%20sneak%20peeks/Homepage.png?raw=true)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Usecase Page**
 
-### Code Splitting
+  ![Usecase](./Website%20sneak%20peeks/Usecase.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Reviews**
 
-### Analyzing the Bundle Size
+  ![Reviews](./Website%20sneak%20peeks/Reviews.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Pricing Page**
 
-### Making a Progressive Web App
+  ![Pricing](./Website%20sneak%20peeks/Pricing.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Frequently Asked Question**
 
-### Advanced Configuration
+  ![FAQ](./Website%20sneak%20peeks/FAQ.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-**Support**
 
-### Deployment
+![Support](./Website%20sneak%20peeks/Support.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Signup**
 
-### `npm run build` fails to minify
+  ![Signup](./Website%20sneak%20peeks/SignUp.png?raw=true)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - **SignIn**
+    ![SignIn](./Website%20sneak%20peeks/SignIn.png?raw=true)
+
+- **Footer**
+
+  ![Footer](./Website%20sneak%20peeks/Footer.png?raw=true)
