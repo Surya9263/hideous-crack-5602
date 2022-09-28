@@ -14,22 +14,15 @@ import {
   Th,
   Tbody,
   Td,
-  border,
-  Stack,
-  VStack,
 } from "@chakra-ui/react";
 import { GrCheckmark } from "react-icons/gr";
-import { FiChevronDown } from "react-icons/fi";
 import {
-  Biling,
   fdata,
   FreeList,
-  Organize,
   ProList,
-  Track,
-  Report,
   Frequently_asked_questions,
 } from "./PricingDatabase";
+import FAQ from "./FAQ";
 
 function Pricing() {
   return (
@@ -46,7 +39,8 @@ function Pricing() {
           </Heading>
         </Box>
         {/* headers */}
-        <SimpleGrid columns={2} gap="9rem">
+        {/* lg md sm */}
+        <SimpleGrid columns={[2,1]} gap="9rem">
           <Box>
             <Text className={style.heading3}>Free</Text>
             <Text className={style.heading4}>
@@ -103,7 +97,7 @@ function Pricing() {
             <Button className={style.pbtn2}>14 day free trial</Button>
           </Box>
         </SimpleGrid>
-{/* Features */}
+        {/* Features */}
         <Box textAlign="start" w={"100%"}>
           <TableContainer>
             <Table variant="simple">
@@ -154,23 +148,10 @@ function Pricing() {
           </TableContainer>
         </Box>
 
-
         {/* FAQ */}
-        <Box width="80%" m="auto" border="solid">
-        <Box className={style.headFaq}><Text>Frequently Asked Questions</Text> </Box>
-        {/* qns */}
-        {
-          Frequently_asked_questions.map(e=>
-            
-        <Box display="flex" justifyContent="space-between"p="1rem">
-          <Box>{e.question}</Box>
-          <Box fontSize="1.3rem" color="grey"><FiChevronDown/></Box>
-        </Box>
-            )
-        }
-          
-        </Box>
-        
+        <FAQ />
+        {/* FAQ */}
+
       </Container>
     </Box>
   );
