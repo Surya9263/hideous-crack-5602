@@ -13,8 +13,37 @@ import {
   useColorModeValue,
   Image,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+
+  const [creds, setCreds] = useState({});
+ 
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(login(creds));
+  };
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setCreds({
+      ...creds,
+      [name]: value,
+    });
+  };
+ 
+  // useEffect(()=>{
+  //   if(token){
+  //     navigate("/")
+  //   }
+
   return (
     <Flex
       minH={"100vh"}
@@ -52,11 +81,11 @@ export default function Login() {
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+              <Input type="email"  name="email"   onChange={onChange}  />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" />
+              <Input type="password"  name="password" onChange={onChange} />
             </FormControl>
             <Stack spacing={10}>
               <Stack
@@ -73,6 +102,9 @@ export default function Login() {
                 _hover={{
                   bg: "blue.500",
                 }}
+
+
+            onClick={onSubmit}
               >
                 Sign in
               </Button>
