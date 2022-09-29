@@ -1,9 +1,34 @@
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+  Stack,
+  useDisclosure,
+  Box,
+  CloseButton,
+  Button,
+} from '@chakra-ui/react'
 import supty from "./Support.module.css";
 
 export default function Support() {
+
+    const handlesubmit = (e) => {
+           e.preventDefault()
+           alert("Message Send")
+          
+    }
+
+    const {
+      isOpen: isVisible,
+      onClose,
+      onOpen,
+    } = useDisclosure({ defaultIsOpen: true })
+  
+
   return (
     <>
-    <div>
+    <div className={supty.supparent}>
 
 
 
@@ -17,8 +42,7 @@ export default function Support() {
      
       <iframe
        className={supty.youtube}
-        width="860"
-        height="440"
+       
         src="https://www.youtube.com/embed/PqXO5AbUWpA"
         title="YouTube video player"
         frameborder="0"
@@ -27,11 +51,69 @@ export default function Support() {
       ></iframe>
 
 
-      <div>
+      <div className={supty.uform}>
         <div className={supty.susubheading} >What do you need help with?</div>
+
+        <form onSubmit={handlesubmit} action="">
+            <select name="" id="">
+                <option value="">I have a question before signing up...</option>
+                <option value="">I can't access my account...</option>
+                <option value="">somthing might be broken...</option>
+                <option value="">I would like to request a feature...</option>
+                <option value="">I have a billing question...</option>
+                <option value="">Other</option>
+            </select>
+
+            <label htmlFor="">
+                Message
+              
+            </label>
+            <input type="text" placeholder="What's you issue or question?" />
+
+            <label htmlFor="">
+            Name 
+           
+            </label>
+            <input type="text" placeholder="Enter you name" />
+
+            <label htmlFor="">
+                Email Address
+              
+            </label>
+            <input type="text" placeholder="Enter you email address" />
+            {/* <button  className={supty.uformbutton}>Send</button> */}
+            {
+
+isVisible ? (
+
+  <Alert mt={"10px"} h={"50px"} w={"350px"} status='success'>
+    <AlertIcon />
+    <Box w={"350px"}>
+      <AlertTitle>Success!</AlertTitle>
+      <AlertDescription>
         
+      </AlertDescription>
+    </Box>
+    <CloseButton
+      alignSelf='flex-start'
+      position='relative'
+      right={-1}
+      top={-1}
+      onClick={onClose}
+    />
+  </Alert>
+) : (
+  <Button mt={"10px"} h="50px" w={"80px"} colorScheme='blue' onClick={onOpen}>Send</Button>
+)
+       }
+        </form>
 
       </div>
+
+      {/* ;;;;;; */}
+    
+
+     
     </>
   );
 }

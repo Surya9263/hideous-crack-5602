@@ -9,6 +9,7 @@
     font-size: 72px;
     font-weight: 200;
     color: #212529;
+    margin-bottom: 30px;
 }
 
 .susubheading{
@@ -16,6 +17,7 @@
     font-size: 32px;
     line-height: 1.2;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .sulastheading{
@@ -30,9 +32,72 @@
 
 .youtube{
     margin: auto;
+    width:860px;
+    height:440px;
+   
 }
 
+.supparent{
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 80px;
+}
 
+.uform{
+    /* border: 1px solid red; */
+    width: 85%;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
 
+.uform > form {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.uform > form > select , input {
+    border: 1px solid rgba(128, 128, 128, 0.21);
+    border-radius: 2px ;
+    height: 40px;
+    padding: 5px;
+
+}
+
+.uform > form >  input
+{
+    padding: 10px;
+}
+
+.uformbutton{
+    border-radius: 5px;
+    background-color: #3b8fc2;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    padding: 7px 15px;
+    width: 100px;
+    margin-top:30px;
+   
+}
+
+@media screen and (max-width:970px) {
+
+    .youtube{
+        width:95%;
+    }
+    
+}
+
+@media screen and (max-width:638px){
+    .youtube{
+        width: 400px;
+        height: 300px;
+    }
+}
 
 
