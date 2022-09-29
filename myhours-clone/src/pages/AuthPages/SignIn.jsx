@@ -19,16 +19,19 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../../Store/auth/auth.actions";
 
 export default function Login() {
-
   const [creds, setCreds] = useState({});
- 
+
+  const token = useSelector((state) => state.auth.token);
+
+  console.log("token id ", token);
+
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
-
+    console.log("user login creds", creds);
     dispatch(login(creds));
   };
 
@@ -39,11 +42,11 @@ export default function Login() {
       [name]: value,
     });
   };
- 
+
   // useEffect(()=>{
   //   if(token){
   //     navigate("/")
-  //   }
+  //   } })
 
   return (
     <Flex
@@ -68,11 +71,13 @@ export default function Login() {
             src="https://allhoursproductb0b1.blob.core.windows.net/static-files/myhours_logo_icon.svg"
             alt="Dan Abramov"
           />
-          
         </Stack>
-        <Box float="left"> <Text fontSize="30px" fontWeight="bold" color={"gray.600"} >
-          Sign in
-          </Text></Box>
+        <Box float="left">
+          {" "}
+          <Text fontSize="30px" fontWeight="bold" color={"gray.600"}>
+            Sign in
+          </Text>
+        </Box>
         <Box
           rounded={"lg"}
           bg={useColorModeValue("white", "gray.700")}
@@ -82,11 +87,11 @@ export default function Login() {
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email"  name="email"   onChange={onChange}  />
+              <Input type="email" name="email" onChange={onChange} />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password"  name="password" onChange={onChange} />
+              <Input type="password" name="password" onChange={onChange} />
             </FormControl>
             <Stack spacing={10}>
               <Stack
@@ -103,9 +108,7 @@ export default function Login() {
                 _hover={{
                   bg: "blue.500",
                 }}
-
-
-            onClick={onSubmit}
+                onClick={onSubmit}
               >
                 Sign in
               </Button>
