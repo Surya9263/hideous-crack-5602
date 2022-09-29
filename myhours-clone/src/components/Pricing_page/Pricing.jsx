@@ -15,12 +15,12 @@ import {
   Tbody,
   Td,
 } from "@chakra-ui/react";
-import { GrCheckmark } from "react-icons/gr";
 import { fdata, FreeList, ProList } from "./PricingDatabase";
 import FAQ from "./FAQ";
 import ReadmoreSection from "./ReadmoreSection";
 import HaveQn from "./HaveQn";
 import BottomSection from "./BottomSection";
+import Features from "./Features";
 
 function Pricing() {
   return (
@@ -99,72 +99,23 @@ function Pricing() {
           </Box>
         </SimpleGrid>
         {/* Features */}
-        <Box textAlign="start">
-          <TableContainer>
-            <Table variant="simple">
-              <Thead>
-                <Tr padding="1rem 0">
-                  <Th border="none" textAlign={"start"} fontSize="18px">
-                    Feature
-                  </Th>
-                  <Th fontSize="18px" p="0 2rem 0 - 1rem" border="none">
-                    Free
-                  </Th>
-                  <Th fontSize="18px" p="0 2rem 0 -1rem" border="none">
-                    Pro
-                  </Th>
-                </Tr>
-              </Thead>
-
-              <Tbody width={"100%"}>
-                {/* feature */}
-
-                {fdata.map((data) => (
-                  <>
-                    <Tr className={style.bagcoltab}>
-                      <Td border="none" fontWeight="600">
-                        {data.title}
-                      </Td>
-                      <Td border="none" />
-                      <Td border="none" />
-                    </Tr>
-
-                    {data.d.map((e) => (
-                      <Tr>
-                        <Td>{e.title}</Td>
-                        <Td textAlign={"center"} fontSize="1.3rem">
-                          {e.free ? <GrCheckmark /> : ""}
-                        </Td>
-                        <Td textAlign={"center"} fontSize="1.3rem">
-                          {e.pro ? <GrCheckmark /> : ""}
-                        </Td>
-                      </Tr>
-                    ))}
-                    <br />
-                    <br />
-                  </>
-                ))}
-              </Tbody>
-            </Table>
-          </TableContainer>
-        </Box>
-
+       <Features/>
         {/* FAQ */}
         <FAQ />
-        {/* FAQ */}
+     
         {/* readmore */}
         <ReadmoreSection />
-        {/* readmore */}
+     
 
         {/* having qn */}
         <Box m="10rem 0">
           <HaveQn />
         </Box>
-        {/* having qn */}
+ 
 
         {/* bottom part */}
         <BottomSection />
-        {/* bottom part */}
+ 
       </Box>
     </Box>
   );

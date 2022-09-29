@@ -1,0 +1,30 @@
+
+*{
+    font-family: Avenir Next, sans-serif;
+
+}
+
+
+.tfont{
+    font-size: 12px;
+    font-weight: bold;
+    color: grey;
+}
+
+.trackform{
+    background-color:rgba(235, 235, 235, 0.479);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 0.5rem;
+}
+.trackform input{
+    border-color: lightgrey;
+    background-color: white;
+    /* color:rgb(238, 229, 229); */
+    font-weight: 500;
+}
+.trackform textarea{
+    background-color: white;
+    border-color: lightgrey;
+    color: rgb(127, 192, 138);
+
+}

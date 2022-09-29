@@ -21,8 +21,8 @@ function FAQ() {
         <Text>Frequently Asked Questions</Text>{" "}
       </Box>
       {/* qns */}
-      {data.map((e) => (
-        <Box>
+      {data.map((e,i) => (
+        <Box key={i}>
           <Box display="flex" justifyContent="space-between" p="1rem">
             <Box>{e.question}</Box>
             <Box
