@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding:0%;
+    box-sizing: border-box;
+}
+
+
+.suheading{
+    font-size: 72px;
+    font-weight: 200;
+    color: #212529;
+}
+
+.susubheading{
+    color: #375d75;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.sulastheading{
+    font-size: 1.5rem;
+    color: #212529
+}
+
+.sulastheading > span {
+    color: #2cb1f0;
+    text-decoration: underline;
+}
+
+.youtube{
+    margin: auto;
+}
+
+
+
+
+
