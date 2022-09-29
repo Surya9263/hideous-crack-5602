@@ -150,7 +150,7 @@ function Pricing() {
         </Box>
 
         {/* FAQ */}
-        {/* <FAQ /> */}
+        <FAQ />
         {/* FAQ */}
         {/* readmore */}
         <ReadmoreSection />

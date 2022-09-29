@@ -10,13 +10,13 @@ import HowItWorks from "./pages/HowItWorks";
 function App() {
   return (
     <div>
-      {/* <LandingPage/> */}
+      <LandingPage/>
      {/* <Pricing/> */}
      {/* <Login/>
      <Signup/>
      <Terms/> */}
      {/* <Success/> */}
-     <HowItWorks />
+     {/* <HowItWorks /> */}
     </div>
   );
 }

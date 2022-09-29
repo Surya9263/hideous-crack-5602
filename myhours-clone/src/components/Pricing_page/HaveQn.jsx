@@ -1,7 +1,7 @@
 import { Box, Img } from "@chakra-ui/react";
 import React from "react";
 import style from "./Pricing.module.css";
-import { GrCheckmark } from "react-icons/gr";
+// import { GrCheckmark } from "react-icons/gr";
 
 function HaveQn() {
   return (
