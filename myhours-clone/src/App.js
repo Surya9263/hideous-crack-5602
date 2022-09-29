@@ -1,20 +1,22 @@
 
-import logo from './logo.svg';
-import './App.css';
-// import Pricing from './Pricing_page/Pricing';
-import Navbar from './Component/utkarsh/Navbar';
-import Footer from './Component/utkarsh/Footer';
-import Support from './Component/utkarsh/Support';
+import Pricing from './components/Pricing_page/Pricing';
+import Login from './AuthPages/SignIn';
+import Signup from './AuthPages/SignUp';
+import Terms from './AuthPages/Terms';
+import Success from './AuthPages/Success';
+import LandingPage from './components/Landing_Page/LandingPage';
+import HowItWorks from "./pages/HowItWorks";
+
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-       {/* <Support/> */}
-      <Footer/>
-      
-    
-
-
+    <div>
+      {/* <LandingPage/> */}
+     {/* <Pricing/> */}
+     {/* <Login/>
+     <Signup/>
+     <Terms/> */}
+     {/* <Success/> */}
+     <HowItWorks />
     </div>
   );
 }
