@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 import Pricing from './components/Pricing_page/Pricing';
 import Login from './AuthPages/SignIn';
 import Signup from './AuthPages/SignUp';
@@ -21,6 +22,12 @@ function App() {
      {/* <HowItWorks /> */}
   
   <Track_page/>
+=======
+
+function App() {
+  return (
+    <div>  
+>>>>>>> 2b0d2b8749153b62e3aa9924cb6a2bdaff1d7a78
     </div>
   );
 }

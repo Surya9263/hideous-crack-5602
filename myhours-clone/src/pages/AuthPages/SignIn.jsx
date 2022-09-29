@@ -13,8 +13,41 @@ import {
   useColorModeValue,
   Image,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { login } from "../../Store/auth/auth.actions";
 
 export default function Login() {
+  const [creds, setCreds] = useState({});
+
+  const token = useSelector((state) => state.auth.token);
+
+  console.log("token id ", token);
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log("user login creds", creds);
+    dispatch(login(creds));
+  };
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setCreds({
+      ...creds,
+      [name]: value,
+    });
+  };
+
+  // useEffect(()=>{
+  //   if(token){
+  //     navigate("/")
+  //   } })
+
   return (
     <Flex
       minH={"100vh"}
@@ -38,11 +71,13 @@ export default function Login() {
             src="https://allhoursproductb0b1.blob.core.windows.net/static-files/myhours_logo_icon.svg"
             alt="Dan Abramov"
           />
-          
         </Stack>
-        <Box float="left"> <Text fontSize="30px" fontWeight="bold" color={"gray.600"} >
-          Sign in
-          </Text></Box>
+        <Box float="left">
+          {" "}
+          <Text fontSize="30px" fontWeight="bold" color={"gray.600"}>
+            Sign in
+          </Text>
+        </Box>
         <Box
           rounded={"lg"}
           bg={useColorModeValue("white", "gray.700")}
@@ -52,11 +87,11 @@ export default function Login() {
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+              <Input type="email" name="email" onChange={onChange} />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" />
+              <Input type="password" name="password" onChange={onChange} />
             </FormControl>
             <Stack spacing={10}>
               <Stack
@@ -73,6 +108,7 @@ export default function Login() {
                 _hover={{
                   bg: "blue.500",
                 }}
+                onClick={onSubmit}
               >
                 Sign in
               </Button>

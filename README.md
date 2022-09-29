@@ -29,7 +29,7 @@ This collaborative project is a clone of the [MyHours](https://myhours.com) webs
 ## Contributors
 
 - [@SURYA SRIVASTAV](GITHUBLINK)
-- [@PUSHPARAJ PATEL](https://github.com/pushpraj15295)
+- [@PUSHPRAJ PATEL](https://github.com/pushpraj15295)
 - [@SHRIDHAR R HAKKE](https://github.com/Shridhar1998)
 - [@UTKARSH GUPTA](https://github.com/utkarshqw)
 - [@DINESH KARDE](https://github.com/captain-programming)
