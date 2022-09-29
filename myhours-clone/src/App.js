@@ -5,16 +5,18 @@ import Signup from './AuthPages/SignUp';
 import Terms from './AuthPages/Terms';
 import Success from './AuthPages/Success';
 import LandingPage from './components/Landing_Page/LandingPage';
+import HowItWorks from "./pages/HowItWorks";
 
 function App() {
   return (
     <div>
-      <LandingPage/>
+      {/* <LandingPage/> */}
      {/* <Pricing/> */}
      {/* <Login/>
      <Signup/>
      <Terms/> */}
      {/* <Success/> */}
+     <HowItWorks />
     </div>
   );
 }
