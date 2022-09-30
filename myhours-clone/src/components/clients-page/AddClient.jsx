@@ -1,8 +1,36 @@
 import React from 'react';
-import { Input, Text, Box, Flex, Heading,Textarea, Button } from "@chakra-ui/react";
+import { Input, Text, Box, Flex, Textarea, Button } from "@chakra-ui/react";
 import { GrCircleQuestion } from 'react-icons/gr';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AddClient = () => {
+  var clientData = JSON.parse(localStorage.getItem("clients")) || [];
+  const navigate = useNavigate();
+  const loading = false;
+  const [addClients, setAddClients] = useState({});
+
+  const onChange = (e)=>{
+    const { name, value } = e.target
+
+    setAddClients({
+      ...addClients,
+      [name]: value,
+      ["status"]: "Active",
+    });
+  };
+
+  const onSubmit=(e)=>{
+    e.preventDefault();
+    clientData.push(addClients);
+    localStorage.setItem("clients", JSON.stringify(clientData));
+    navigate('/clients');
+  }
+
+  const onCancel=()=>{
+    navigate('/clients');
+  }
+
   return (
     <>
     <Flex height={'100vh'} justifyContent='space-between'>
@@ -16,43 +44,43 @@ const AddClient = () => {
         </Flex>
         <Box mt={4} fontSize={'14px'}>
           <Text>NAME</Text>
-          <Input size='md' borderRadius={6} type="text" required/>
+          <Input size='md' borderRadius={6} type="text" name='name' required onChange={onChange}/>
         </Box>
         <Box mt={4} fontSize={'14px'}>
           <Text>CONTACT PERSON</Text>
-          <Input size='md' borderRadius={6} type="text"/>
+          <Input size='md' borderRadius={6} type="text" name='contactPerson' onChange={onChange}/>
         </Box>
         <Box mt={4} fontSize={'14px'}>
           <Text>EMAIL</Text>
-          <Input size='md' borderRadius={6} type="email" required/>
+          <Input size='md' borderRadius={6} type="email" name='email' required onChange={onChange}/>
         </Box>
         <Box mt={4} fontSize={'14px'}>
           <Text>PHONE</Text>
-          <Input size='md' borderRadius={6} type='number'/>
+          <Input size='md' borderRadius={6} type='number' name='phone' onChange={onChange}/>
         </Box>
         <Box mt={4} fontSize={'14px'}>
           <Text>ADDRESS</Text>
-          <Textarea />
+          <Textarea onChange={onChange} name='address' />
         </Box>
         <br/>
         <hr/>
         <Flex mt={4} fontSize={'14px'} justifyContent={'space-between'}>
           <Box>
           <Text>TAX NAME</Text>
-          <Input size='md' borderRadius={6} type='text'/>
+          <Input size='md' borderRadius={6} type='text' onChange={onChange} name='taxName'/>
           </Box>
           <Box>
           <Text>TAX PERCENTAGE</Text>
-          <Input size='md' borderRadius={6} type='number'/>
+          <Input size='md' borderRadius={6} type='number' onChange={onChange} name='taxPercentage'/>
           </Box>
         </Flex>
         <Box mt={4} fontSize={'14px'}>
           <Text>TAX NUMBER</Text>
-          <Input size='md' borderRadius={6} type='number'/>
+          <Input size='md' borderRadius={6} type='number' name='taxNumber' onChange={onChange}/>
         </Box>
         <Flex mt={4} gap={4}>
-          <Button bg="rgb(129,183,217)" color={"white"}>Save</Button>
-          <Button bg="rgb(221,239,250)">Cancel</Button>
+          <Button isLoading={loading} bg="rgb(129,183,217)" color={"white"} onClick={onSubmit}>Save</Button>
+          <Button bg="rgb(221,239,250)" onClick={onCancel}>Cancel</Button>
         </Flex>
       </Box>
     </form>
