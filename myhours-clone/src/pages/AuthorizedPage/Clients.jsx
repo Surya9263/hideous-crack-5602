@@ -1,0 +1,43 @@
+import React from 'react';
+import { Box, Button, Flex, Input, Text } from '@chakra-ui/react';
+import { MdAdd, MdOutlineCloudDownload } from 'react-icons/md';
+import { GrCircleQuestion } from 'react-icons/gr';
+import SearchSortButton from '../../components/clients-page/SearchSortButton';
+import ClientData from '../../components/clients-page/ClientData';
+import { useNavigate } from 'react-router-dom';
+
+const Clients = () => {
+
+  return (
+    <>
+    <Flex height={'100vh'} justifyContent='space-between'>
+	<Box width={'15.5%'} bg={'rgb(238,241,242)'}></Box>
+	<Box width={'84.5%'} p={8}>
+		<Flex justifyContent={'space-between'} margin={'auto'}>
+			<Flex alignItems={'center'} gap={3} >
+			<Text fontSize={'30px'} fontWeight={500} >Clients </Text>
+			<GrCircleQuestion cursor='pointer'/>
+			</Flex>
+			<Button fontSize={'15px'} bg={'rgb(50,121,165)'} color='white' leftIcon={<MdAdd/>}>
+				New Client 
+			</Button>
+		</Flex>
+		<Flex mt={4} justifyContent='space-between'>
+			<Flex gap={2} width={'83%'}>
+			<Input placeholder='Search by Client name' width={'70%'}/>
+			<SearchSortButton />
+			</Flex>
+			<Flex alignItems={'center'} bg={'rgb(221,239,250)'} p={"7px 15px"} borderRadius={5}>
+			<MdOutlineCloudDownload fontSize={'25px'} cursor='pointer'/>
+			</Flex>
+      	</Flex>
+		<Box mt={4}>
+		<ClientData />
+		</Box>
+	</Box>
+    </Flex>
+    </>
+  )
+}
+
+export default Clients;
