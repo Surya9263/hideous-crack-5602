@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import React from 'react'
-
+import {Link} from "react-router-dom"
 
 import style from "./LandingPage.module.css"
 const LandingPage = () => {
@@ -85,7 +85,7 @@ const LandingPage = () => {
     </Flex>
     <Flex justifyContent="center" gap="15px" alignItems="center">
         <Box my="80px">
-        <a className={style.linkToWorking} href="#">See how My Hours works in detail</a>
+        <Link to="/how-it-works" className={style.linkToWorking}>See how My Hours works in detail</Link>
         </Box>
         <Box>
         <img style={{width:"25px"}} src="https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/609937875793cc93f40c3a44_vectorpaint.svg" alt="" />
@@ -124,7 +124,7 @@ const LandingPage = () => {
         </Box>
         <Box w="22%">
             <Flex justifyContent="center" gap="10px">
-                <a className={style.linkToWorking} href="#">Find more use cases</a>
+                <Link className={style.linkToWorking} to="use-cases">Find more use cases</Link>
                 <img style={{width:"25px"}} src="https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/609937875793cc93f40c3a44_vectorpaint.svg" alt="" />
             </Flex>
         </Box>
