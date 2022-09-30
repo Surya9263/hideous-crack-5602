@@ -124,21 +124,21 @@ alert("Project added and Started Timer")
            {/* text area */}
            <Box mt={'2rem'} className="textbox" border={"1px solid lightgrey"} borderRadius={"0.4rem"}  width={"97%"} bgColor={"#fff"}>
             <Flex justifyContent={'space-between'}m={"0 0.5rem"}>
-             { !Aa? <Flex border="0.5rem" m="4px" gap={2} color={"grey"}>
-                <Text onClick={()=>setStyle({...style,bold:!style.bold})}><b>B</b></Text>
-                <Text mt={"8px"}  onClick={()=>setStyle({...style,italic:!style.italic})}><BiItalic /></Text>
-                <Text onClick={()=>setStyle({...style,h1:!style.h1,h2:false})}><b>H<small>1</small></b></Text>
-                <Text  onClick={()=>setStyle({...style,h2:!style.h2,h1:false})}><b>H<small>2</small></b></Text>
-                <Text mt={"8px"}><b> <TbLink /></b></Text>
-                <Text mt={"8px"}><b> <FaListUl /></b></Text>
-                <Text mt={"8px"}><b> <FaListOl /></b></Text>
-                <Text mt={"8px"}><b> <FaQuoteRight fontSize={"0.9rem"} /></b></Text>
-                <Text onClick={()=>setStyle({bold:false,italic:false,h1:false,h2:false,Aa:false})} color='lightgrey'>Normal</Text>
+             { !Aa? <Flex border="0.5rem" m="4px" gap={2} color={"grey"} >
+                <Text onClick={()=>setStyle({...style,bold:!style.bold})} _hover={{color:'blue.400'}}  color={bold?'blue.400':"none"} ><b>B</b></Text>
+                <Text mt={"8px"}  onClick={()=>setStyle({...style,italic:!style.italic})}  _hover={{color:'blue.400'}}   color={italic?'blue.400':"none"} ><BiItalic  /></Text>
+                <Text color={h1?'blue.400':"none"}  onClick={()=>setStyle({...style,h1:!style.h1,h2:false})} _hover={{color:'blue.400'}} ><b>H<small>1</small></b></Text>
+                <Text color={h2?'blue.400':"none"}   onClick={()=>setStyle({...style,h2:!style.h2,h1:false})} _hover={{color:'blue.400'}} ><b>H<small>2</small></b></Text>
+                <Text mt={"8px"} _hover={{color:'blue.400'}} ><b> <TbLink /></b></Text>
+                <Text mt={"8px"} _hover={{color:'blue.400'}} ><b> <FaListUl /></b></Text>
+                <Text mt={"8px"} _hover={{color:'blue.400'}} ><b> <FaListOl /></b></Text>
+                <Text mt={"8px"} _hover={{color:'blue.400'}} ><b> <FaQuoteRight fontSize={"0.9rem"} /></b></Text>
+                <Text onClick={()=>setStyle({bold:false,italic:false,h1:false,h2:false,Aa:false})} color='lightgrey' _hover={{color:'blue.400'}} >Normal</Text>
               
               </Flex>:<Box textColor={'lightgrey'} pl="0.5rem" >Write Something</Box>}
               <Flex textAlign='end'>
                 <Text  pt={1} mt={"4px"}><b> <ImAttachment /></b></Text>
-                <Text onClick={()=>setStyle({...style,Aa:!style.Aa})}  pt={1} mt={"0.1rem"}><b> <VscCaseSensitive fontSize={"1.5rem"} /></b></Text>
+                <Text onClick={()=>setStyle({...style,Aa:!style.Aa})}  pt={1} mt={"0.1rem"} ><b> <VscCaseSensitive  fontSize={"1.5rem"} /></b></Text>
 
               </Flex>
             </Flex>
