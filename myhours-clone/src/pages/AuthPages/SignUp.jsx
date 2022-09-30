@@ -12,13 +12,12 @@ import {
   Heading,
   Text,
   useColorModeValue,
-  Link,
   Image,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../../Store/auth/auth.actions";
 
 // ***********************************************************************************************
@@ -140,7 +139,7 @@ export default function Signup() {
             <Stack spacing={10} pt={2}>
               <p>
                 By signing up you agree to the{" "}
-                <Link color={"blue.400"}>Terms of Use</Link>{" "}
+                <Link to="/terms" color={"blue.400"}>Terms of Use</Link>{" "}
               </p>
               <Button
                 loadingText="Submitting"
@@ -157,7 +156,7 @@ export default function Signup() {
             </Stack>
             <Stack pt={6}>
               <Text align={"center"}>
-                Already a user? <Link color={"blue.400"}>Login</Link>
+                Already a user? <Link to="/login" color={"blue.400"}>Login</Link>
               </Text>
             </Stack>
           </Stack>
