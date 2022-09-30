@@ -1,12 +1,12 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import React from 'react'
-import Footer from '../../Component/utkarsh/Footer';
-import Navbar from '../../Component/utkarsh/Navbar';
+
+
 import style from "./LandingPage.module.css"
 const LandingPage = () => {
   return (
 <div>
-    <Navbar/>
+    {/* <Navbar/> */}
     <Box className={style.parent}>
       <p style={{fontSize:"70px", fontWeight:"lighter"}}><span style={{fontSize:"80px", fontWeight:"bolder"}}>Organize </span>projects,<span style={{fontSize:"80px", fontWeight:"bolder"}}> Track</span> time and <span style={{fontSize:"80px", fontWeight:"bolder"}}>Report</span> your work</p>
     </Box>
@@ -242,7 +242,7 @@ Our software <span style={{textDecoration:"underline"}}>does not include employe
             <Text color="rgb(55, 93, 117)">Teams of 6+ are welcome to book a personalized demo to see how My Hours works in detail.</Text>
         </Box>
     </Flex>
-    <Footer/>
+    {/* <Footer/> */}
 </div>
   )
 }

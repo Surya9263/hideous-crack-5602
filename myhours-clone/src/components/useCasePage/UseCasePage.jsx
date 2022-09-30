@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
-import style from "../css/LandingPage.module.css"
+import style from "../Landing_Page/LandingPage.module.css"
 
 const UseCasePage = () => {
   return (
