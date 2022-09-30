@@ -2,11 +2,12 @@ import {
     Flex,
     Box,
     Stack,
-    Link,
     Text,
     Image,
+   
   } from "@chakra-ui/react";
   import React from "react";
+import { Link } from "react-router-dom";
   
   const Success = () => {
     return (
@@ -42,7 +43,7 @@ import {
             <br /><br />
             <Text fontSize="15px" fontWeight="bold" color={"gray.600"} >
           {/* The account with this email already exists. */}
-          If you are not automatically redirected,<Link color={"blue.400"}>click here</Link>.
+          If you are not automatically redirected,<Link to="/login" > <Text color={"blue.400"}>click here</Text> </Link>.
             </Text>
           </Box>
         </Stack>

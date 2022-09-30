@@ -16,9 +16,10 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../../Store/auth/auth.actions";
+import Success from "./Success";
 
 // ***********************************************************************************************
 export default function Signup() {
@@ -27,13 +28,14 @@ export default function Signup() {
   const [creds, setCreds] = useState({});
   
   const dispatch = useDispatch();
-
+  const {error,loading,token,success} = useSelector((state) => state.auth);
+  console.log("t",error , loading , success);
   const navigate = useNavigate();
 
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("user signup creds", creds);
-    dispatch(signup(creds));
+    dispatch(signup(creds))
   };
 
   const onChange = (e) => {
@@ -50,7 +52,10 @@ export default function Signup() {
   //   }
   // });
 
-  return (
+  if(success){
+    return <Success/>
+  }
+  else return (
     <Flex
       minH={"100vh"}
       align={"center"}
@@ -80,7 +85,7 @@ export default function Signup() {
         </Stack>
         <Box
           rounded={"lg"}
-          bg={useColorModeValue("white", "gray.700")}
+          // bg={useColorModeValue("white", "gray.700")}
           boxShadow={"lg"}
           p={8}
         >
@@ -138,8 +143,7 @@ export default function Signup() {
             </FormControl>
             <Stack spacing={10} pt={2}>
               <p>
-                By signing up you agree to the{" "}
-                <Link to="/terms" color={"blue.400"}>Terms of Use</Link>{" "}
+                <Link to="/terms" target="_blank" > <Flex>By signing up you agree to the:  <Text color={"blue.400"}>Terms of Use</Text></Flex></Link>
               </p>
               <Button
                 loadingText="Submitting"
@@ -156,7 +160,9 @@ export default function Signup() {
             </Stack>
             <Stack pt={6}>
               <Text align={"center"}>
-                Already a user? <Link to="/login" color={"blue.400"}>Login</Link>
+               {
+                  token ?    <Link to="/login" >"Already a user"  <Text color={"blue.400"}>Login</Text> </Link>  : ""
+               }
               </Text>
             </Stack>
           </Stack>
