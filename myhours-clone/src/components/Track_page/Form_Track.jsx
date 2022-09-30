@@ -19,7 +19,6 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { json } from "react-router-dom";
 
 
 
