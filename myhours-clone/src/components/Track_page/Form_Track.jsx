@@ -19,11 +19,9 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+// ## work completed
 
-
-
-
-
+// initial object data
 const init={
   client:'',
   task:'',
@@ -31,12 +29,15 @@ const init={
   desc:''
 }
 
-function FormTrack({setOpen}) {
+function FormTrack({setOpen,status,setStatus}) {
   // const Data = JSON.parse(localStorage.getItem('clientData')) || [];
 const  Data =JSON.parse(localStorage.getItem('clientData')) || []
   const [data,setData]=useState(init)
+  useEffect(()=>{
+    localStorage.setItem("clientData",JSON.stringify([data,...Data]))
+  },[])
 
-
+// handle form data or input data
   function handleChange(e){
     const {name,value}=e.target;
     setData({...data,
@@ -211,12 +212,15 @@ alert("Project added and Started Timer")
           <Button fontSize={'16px'} p={'0 1.8rem'} bgColor={"#29BA60"} fontWeight="500"   color={"#fff"}  
           _hover={{bg:"green"}}
           onClick={()=>{
-            handleSubmit()
+            handleSubmit();
+           setStatus(p=>!p)
+          
             console.log("added")
           }}
           >Start timer</Button>
         </Box>
         <Box>
+          {/* start and close */}
           <Button className="btns" fontSize={'16px'} p={'0 1.8rem'}color={"#29BA60"} fontWeight="500" bgColor={' rgba(189, 247, 214, 0.733)'} 
           _hover={{bg:"rgb(127, 192, 138)",color:"white"}}
           onClick={()=>{
@@ -230,7 +234,7 @@ alert("Project added and Started Timer")
           <Text className="close" color={'blue'}
           _hover={{textDecoration:'underline'}}
           onClick={()=>setOpen(p=>!p)}
-          >Close</Text>
+          >Cancel</Text>
         </Box>
 </Flex>
     </Box>
