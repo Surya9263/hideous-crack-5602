@@ -34,28 +34,28 @@ export default function Navbar() {
     <>
       <nav className={styles.nav1}>
         <div>
-          <img className={styles.img1} src="myhourslogo.png" alt="#" />
+          <Link to="/"> <img className={styles.img1} src="myhourslogo.png" alt="#" /></Link>
         </div>
 
         <ul className={styles.ul1}>
           <li className={styles.uli} >
-            <Link>How it works</Link>
+            <Link to="how-it-works">How it works</Link>
           </li>
           <li className={styles.uli}>
-            <Link>Use cases</Link>
+            <Link to="use-cases">Use cases</Link>
           </li>
           <li className={styles.uli}>
-            <Link>Pricing</Link>
+            <Link to="pricing">Pricing</Link>
           </li>
           <li className={styles.uli}>
-            <Link>Support</Link>
+            <Link to="support">Support</Link>
           </li>
           <li className={styles.uli}>
-            <Link>Sign in</Link>
+            <Link to="login">Sign in</Link>
           </li>
           <li className={styles.uli}>
-            <Link>
-              {" "}
+            <Link to="signup">
+             
               <button className={styles.btn}>Get My Hours Free</button>
             </Link>
           </li>
