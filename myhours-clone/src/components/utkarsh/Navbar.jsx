@@ -77,27 +77,27 @@ export default function Navbar() {
       style={{transform:active? "translateY(0%)":"translateY(-100%)"}}
       className={styles.dropdown}>
         <p className={styles.para}>
-          <Link to="#">How it works</Link>
+          <Link to="how-it-works">How it works</Link>
         </p>
 
         <p className={styles.para}>
-          <Link>Use cases</Link>
+          <Link to="use-cases">Use cases</Link>
         </p>
 
         <p className={styles.para}>
-          <Link>Pricing</Link>
+          <Link to="pricing" >Pricing</Link>
         </p>
 
         <p className={styles.para} >
-          <Link>Support</Link>
+          <Link to="support">Support</Link>
         </p>
 
         <p className={styles.para}>
-          <Link>Sign in</Link>
+          <Link to="login">Sign in</Link>
         </p>
 
         <p className={styles.buttonpara}>
-          <Link>
+          <Link to="signup">
             <button className={styles.btndropdown}>Get My Hours Free</button>
           </Link>
         </p>
