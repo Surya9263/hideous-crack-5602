@@ -11,7 +11,6 @@ function App() {
       <Navbar/>
         <AllRoutes/>
         <Footer/>
-         {/* <SimpleSidebar/> */}
     </div>
   );
 }
