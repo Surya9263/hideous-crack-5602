@@ -23,7 +23,7 @@ export default function Support() {
       isOpen: isVisible,
       onClose,
       onOpen,
-    } = useDisclosure({ defaultIsOpen: true })
+    } = useDisclosure({ defaultIsOpen: false })
   
 
   return (
