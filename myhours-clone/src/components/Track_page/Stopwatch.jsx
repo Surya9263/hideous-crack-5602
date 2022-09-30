@@ -5,8 +5,9 @@ import { BsStopFill } from "react-icons/bs";
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 
 export const Stopwatch = () => {
-  const { setStartTimer, setTime, time } = useStopwatch(0);
   const [start, setStart] = useState(false);
+  const { setStartTimer, setTime, time } = useStopwatch(0);
+
   return (
     <Box>
       <Flex gap='4'>
@@ -22,12 +23,9 @@ export const Stopwatch = () => {
             < BsStopFill  margin={'0.5em'} />
             Stop
           </Button>
-        ) : (
-          ''
-        )}
+        ) : ( '' )}
         <Button
-          colorScheme='green' variant='outline'
-        
+          colorScheme='green' variant={start?'outline':"solid"} 
           _hover={{ bg: '#007500' ,color:'white'}}
           onClick={() => {
             setStartTimer(true);
@@ -37,18 +35,12 @@ export const Stopwatch = () => {
           {start ? 'Start New' : 'Start'}
         </Button>
         <Text>
-          <span>{('0' + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
-          <span>{('0' + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
-          <span>{('0' + ((time / 10) % 100)).slice(-2)}</span>
+          <span>{('0' + Math.floor((time / 6000) % 60)).slice(-2)}:</span>
+          <span>{('0' + Math.floor((time / 600) % 60)).slice(-2)}:</span>
+          <span>{('0' + ((time / 10) % 60)).slice(-2)}</span>
         </Text>
       </Flex>
-      {/*<button
-        onClick={() => {
-          setTime(0);
-          setStartTimer(false);
-        }}>
-        Reset
-      </button>*/}
+      
     </Box>
   );
 };
