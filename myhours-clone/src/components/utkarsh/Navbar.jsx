@@ -34,7 +34,7 @@ export default function Navbar() {
     <>
       <nav className={styles.nav1}>
         <div>
-          <img className={styles.img1} src="myhourslogo.png" alt="#" />
+          <Link to="/"> <img className={styles.img1} src="myhourslogo.png" alt="#" /></Link>
         </div>
 
         <ul className={styles.ul1}>
