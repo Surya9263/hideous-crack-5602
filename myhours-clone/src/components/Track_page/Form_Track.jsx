@@ -28,11 +28,20 @@ const init={
   tags:'',
   desc:''
 }
+const fstyle={
+  bold:false,
+  italic:false,
+  h1:false,
+  h2:false,
+  Aa:false
+}
 
 function FormTrack({setOpen,status,setStatus}) {
   // const Data = JSON.parse(localStorage.getItem('clientData')) || [];
 const  Data =JSON.parse(localStorage.getItem('clientData')) || []
   const [data,setData]=useState(init)
+  const [style,setStyle]=useState(fstyle);
+  const {bold,italic,h1,h2,Aa}=style
   useEffect(()=>{
     localStorage.setItem("clientData",JSON.stringify([data,...Data]))
   },[])
@@ -114,26 +123,31 @@ alert("Project added and Started Timer")
           </Flex>
            {/* text area */}
            <Box mt={'2rem'} className="textbox" border={"1px solid lightgrey"} borderRadius={"0.4rem"}  width={"97%"} bgColor={"#fff"}>
-            <Flex justifyContent={"space-between"}m={"0 0.5rem"}>
-              <Flex border="0.5rem" m="4px" gap={2} color={"grey"}>
-                <Text><b>B</b></Text>
-                <Text mt={"8px"}><BiItalic /></Text>
-                <Text><b>H<small>1</small></b></Text>
-                <Text><b>H<small>2</small></b></Text>
+            <Flex justifyContent={'space-between'}m={"0 0.5rem"}>
+             { !Aa? <Flex border="0.5rem" m="4px" gap={2} color={"grey"}>
+                <Text onClick={()=>setStyle({...style,bold:!style.bold})}><b>B</b></Text>
+                <Text mt={"8px"}  onClick={()=>setStyle({...style,italic:!style.italic})}><BiItalic /></Text>
+                <Text onClick={()=>setStyle({...style,h1:!style.h1,h2:false})}><b>H<small>1</small></b></Text>
+                <Text  onClick={()=>setStyle({...style,h2:!style.h2,h1:false})}><b>H<small>2</small></b></Text>
                 <Text mt={"8px"}><b> <TbLink /></b></Text>
                 <Text mt={"8px"}><b> <FaListUl /></b></Text>
                 <Text mt={"8px"}><b> <FaListOl /></b></Text>
                 <Text mt={"8px"}><b> <FaQuoteRight fontSize={"0.9rem"} /></b></Text>
+                <Text onClick={()=>setStyle({bold:false,italic:false,h1:false,h2:false,Aa:false})} color='lightgrey'>Normal</Text>
               
-              </Flex>
-              <Flex >
+              </Flex>:<Box textColor={'lightgrey'} pl="0.5rem" >Write Something</Box>}
+              <Flex textAlign='end'>
                 <Text  pt={1} mt={"4px"}><b> <ImAttachment /></b></Text>
-                <Text  pt={1} mt={"0.1rem"}><b> <VscCaseSensitive fontSize={"1.5rem"} /></b></Text>
+                <Text onClick={()=>setStyle({...style,Aa:!style.Aa})}  pt={1} mt={"0.1rem"}><b> <VscCaseSensitive fontSize={"1.5rem"} /></b></Text>
 
               </Flex>
             </Flex>
             
               <Textarea border={"none"} borderTop={"1px solid"} placeholder="Here is a sample placeholder" size="sm" name='desc'
+              fontWeight={bold?'bold':'normal'}
+              fontStyle={italic?'italic':'none'}
+              fontSize={h1?"30px":h2?"27px":""}
+              color={'grey'}
               onChange={(e)=>handleChange(e)}  />
             </Box>
         </Box>
