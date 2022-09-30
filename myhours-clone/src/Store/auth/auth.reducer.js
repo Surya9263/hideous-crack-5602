@@ -16,6 +16,7 @@ let token = localStorage.getItem("token")
 let init = {
   loading: false,
   error: false,
+  success: false,
   token: token,
 };
 
@@ -28,6 +29,7 @@ export const authReducer = (state = init, { type, payload }) => {
         ...state,
         loading: true,
         error: false,
+        success:false,
       };
     }
     case AUTH_LOGIN_SUCCESS: {
@@ -37,8 +39,9 @@ export const authReducer = (state = init, { type, payload }) => {
 
       return {
         ...state,
-        loading: true,
+        loading: false,
         error: false,
+        success:true,
         token: payload.token,
       };
     }
@@ -47,6 +50,7 @@ export const authReducer = (state = init, { type, payload }) => {
         ...state,
         loading: false,
         error: true,
+        success: false,
       };
     }
     case AUTH_LOGOUT: {
