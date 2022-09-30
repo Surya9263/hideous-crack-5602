@@ -19,15 +19,19 @@ import { FaRegUser } from "react-icons/fa";
 import { MdOutlinePhoneIphone } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Apps from "./Apps";
 
 // mian function
 export default function SimpleSidebar() {
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box minH="100vh" backgroundColor="rgb(255,255,255)">
       <SidebarContent display={{ base: "none", md: "block" }} />
 
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        xyhkvsdklhfgljsdljsd
+      <Box ml={{ base: 0, md: 60 }} p="4"  > 
+
+
+       {/* ************************************* YOU CAN ADD COMPONENTS below HERE ********************************************* */}
+       
       </Box>
     </Box>
   );
@@ -62,7 +66,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           />
         </Link>
       </Flex>
-     
+
       <Box
         color="rgb(167,184,194)"
         fontWeight="thin"
@@ -257,11 +261,10 @@ const SidebarContent = ({ onClose, ...rest }) => {
           </Flex>
         </Link>
 
-
-          {/* link down 2 *****************************   ***************************************       ****************************************************/}
+        {/* link down 2 *****************************   ***************************************       ****************************************************/}
 
         <Link
-          href="#"
+          href="/apps"
           style={{ textDecoration: "none" }}
           _focus={{ boxShadow: "none" }}
         >
@@ -282,7 +285,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           </Flex>
         </Link>
 
-            {/* link down 3 *****************************   ***************************************       ****************************************************/}
+        {/* link down 3 *****************************   ***************************************       ****************************************************/}
 
         <Link
           href="#"
@@ -306,7 +309,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           </Flex>
         </Link>
 
-            {/* link down 4 *****************************   ***************************************       ****************************************************/}
+        {/* link down 4 *****************************   ***************************************       ****************************************************/}
 
         <Link
           href="#"
@@ -330,7 +333,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           </Flex>
         </Link>
 
-            {/* link down 5 *****************************   ***************************************       ****************************************************/}
+        {/* link down 5 *****************************   ***************************************       ****************************************************/}
 
         <Link
           href="#"
