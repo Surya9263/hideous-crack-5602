@@ -1,19 +1,82 @@
-import { Table, TableContainer, Tbody, Td, Th, Thead, Tr, TableCaption } from '@chakra-ui/react';
-import React from 'react';
+import { Table, TableContainer, Tbody, Td, Th, Thead, Tr, TableCaption, Flex, Text, Box } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import {MdSettings} from "react-icons/md";
+import {FaCaretDown} from "react-icons/fa";  
+import {HiOutlineArrowNarrowUp, HiOutlineArrowNarrowDown} from "react-icons/hi"; 
 
-const ClientData = () => {
-	const check = false;
+const ClientData = ({newData}) => {
+	var clientData = newData.length===0 ? JSON.parse(localStorage.getItem("clients")) || [] : newData;
+	const check = clientData.length<=0;
+	const [action, setAction] = useState(0);
+	const [sortName, setSortName] = useState(false);
+	const [sortContact, setSortContact] = useState(false);
+	const [sortDetails, setSortDetails] = useState(false);
+	const [sortStatus, setSortStatus] = useState(false);
+	
+	const sortByName=()=>{
+		setSortName(!sortName);
+	    if(sortName){
+		let orderAsc = clientData.sort((a, b)=> a.name.localeCompare(b.name));
+		localStorage.setItem("clients", JSON.stringify(orderAsc));
+	    }else{
+		let orderDes = clientData.sort((a, b)=> b.name.localeCompare(a.name));
+		localStorage.setItem("clients", JSON.stringify(orderDes));
+	    }
+	}
 
+	const sortByContact=()=>{
+		setSortContact(!sortContact);
+	    if(sortContact){
+		let orderAsc = clientData.sort((a, b)=> a.phone.localeCompare(b.phone));
+		localStorage.setItem("clients", JSON.stringify(orderAsc));
+	    }else{
+		let orderDes = clientData.sort((a, b)=> b.phone.localeCompare(a.phone));
+		localStorage.setItem("clients", JSON.stringify(orderDes));
+	    }
+	}
+	const sortByDetails=()=>{
+		setSortDetails(!sortDetails);
+	    if(sortDetails){
+		let orderAsc = clientData.sort((a, b)=> a.email.localeCompare(b.email));
+		localStorage.setItem("clients", JSON.stringify(orderAsc));
+	    }else{
+		let orderDes = clientData.sort((a, b)=> b.email.localeCompare(a.email));
+		localStorage.setItem("clients", JSON.stringify(orderDes));
+	    }
+	}
+	const sortByStatus=()=>{
+		setSortStatus(!sortStatus);
+	    if(sortStatus){
+		let orderAsc = clientData.sort((a, b)=> a.status.localeCompare(b.status));
+		localStorage.setItem("clients", JSON.stringify(orderAsc));
+	    }else{
+		let orderDes = clientData.sort((a, b)=> b.status.localeCompare(a.status));
+		localStorage.setItem("clients", JSON.stringify(orderDes));
+	    }
+	}
+
+	const deleteClient=(id)=>{
+
+	}
+	// console.log(clientData);
   return (
     <>
     <TableContainer>
 	<Table>
 	  <Thead>
 	    <Tr>
-	     <Th>NAME</Th>
-	     <Th>CONTACT PERSON</Th>
-	     <Th>CONTACT DETAILS</Th>
-	     <Th>STATUS</Th>
+	     <Th><Flex alignItems={'center'} onClick={sortByName} cursor="pointer">
+			NAME {sortName ? <HiOutlineArrowNarrowDown/>:<HiOutlineArrowNarrowUp/> }
+	     </Flex></Th>
+	     <Th><Flex alignItems={'center'} onClick={sortByContact} cursor="pointer">
+	     CONTACT PERSON {sortContact ? <HiOutlineArrowNarrowDown/>:<HiOutlineArrowNarrowUp/> }
+	     </Flex></Th>
+	     <Th><Flex alignItems={'center'} onClick={sortByDetails} cursor="pointer">
+	     CONTACT DETAILS {sortDetails ? <HiOutlineArrowNarrowDown/>:<HiOutlineArrowNarrowUp/> }
+	     </Flex></Th>
+	     <Th><Flex alignItems={'center'} onClick={sortByStatus} cursor="pointer">
+	     STATUS {sortStatus ? <HiOutlineArrowNarrowDown/>:<HiOutlineArrowNarrowUp/> }
+	     </Flex></Th>
 	     <Th>ACTION</Th>
 	    </Tr>
 	  </Thead>
@@ -21,20 +84,32 @@ const ClientData = () => {
 		<TableCaption>No Clients found.</TableCaption>
 		):(
 	  <Tbody>
-		<Tr>
-		<Td>Dinesh</Td>
-		<Td>fdf</Td>
-		<Td>fsdsd@gmil</Td>
-		<Td>Acive</Td>
-		<Td>Edit</Td>
-	    </Tr>
-	    <Tr>
-		<Td>Dinesh1</Td>
-		<Td>fdfF</Td>
-		<Td>fsdsDFd@gmil</Td>
-		<Td>Acive</Td>
-		<Td>Edit</Td>
-	    </Tr>
+		{clientData.map((client, i)=>(
+		    <Tr key={i}>
+			<Td fontSize={'14px'}>{client.name}</Td>
+			<Td fontSize={'14px'}>{client.phone}</Td>
+			<Td fontSize={'14px'}>{client.email}</Td>
+			<Td fontSize={'14px'}>{client.status}</Td>
+			<Td>{action===i+1 ? (
+				<Box borderRadius={4} boxShadow={'rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px'} onMouseLeave={()=> setAction(0)} position={'absolute'} bg={'white'}>
+					<Flex cursor={'pointer'} alignItems='center' gap={.5} p={"5px 10px"}>
+					<MdSettings color='gray'/>
+					<FaCaretDown />
+					</Flex>
+					<Flex direction={'column'} fontSize={'14px'}>
+						<Text cursor={'pointer'} _hover={{"bg": "rgb(221,239,250)"}} p={"3px 10px"}>Edit</Text>
+						<Text cursor={'pointer'} _hover={{"bg": "rgb(221,239,250)"}} p={"3px 10px"}>Archive</Text>
+						<Text cursor={'pointer'} _hover={{"bg": "rgb(221,239,250)"}} p={"3px 10px"} onClick={()=> deleteClient(i)}>Delete</Text>
+					</Flex>
+				</Box>
+			):(
+				<Flex cursor={'pointer'} alignItems='center' gap={.5} onClick={()=> setAction(i+1)}>
+				<MdSettings color='gray'/>
+				<FaCaretDown />
+				</Flex>
+			)}</Td>
+		    </Tr>
+		))}
 	  </Tbody>
 	    )}
 	</Table>
