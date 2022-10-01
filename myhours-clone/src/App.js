@@ -1,21 +1,31 @@
 
-import Footer from './components/utkarsh/Footer';
-import Navbar from './components/utkarsh/Navbar';
-import SimpleSidebar from './pages/AuthorizedPage/dashboard';
-import AllRoutes from './Routes/AllRoutes';
-// import Track_page from './components/Track_page/Track_page';
+
+
+import AddNewProject from "./components/fw18-1237/AddNewProject";
+import Footer from "./components/fw18-1237/Footer";
+import Navbar from "./components/fw18-1237/Navbar";
+import Project from "./components/fw18-1237/Project";
+import Support from "./components/fw18-1237/Support";
+import Task from "./components/fw18-1237/Task";
+import Help from "./pages/AuthorizedPage/Help";
+import Login from "./pages/AuthPages/SignIn";
+
 function App() {
   return (
     <div>
-  
-        {/* <Navbar/>
-        <AllRoutes/>
-         <Footer/> */}
+      {/* <Login/> */}
+      {/* <Help/> */}
+      {/* {/* <Navbar/> */}
+      {/* <Support/> */}
+      {/* <Footer/>  */}
+      <Project/>
+      {/* <AddNewProject/> */}
+      {/* <Task/> */}
 
-         <SimpleSidebar/>
-       
-    </div>
-  );
+      
+</div>
+)
+
 }
 
 export default App;

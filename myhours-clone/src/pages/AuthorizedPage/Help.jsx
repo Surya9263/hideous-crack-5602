@@ -12,6 +12,7 @@ import React from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import { FaPaperPlane } from "react-icons/fa";
+
 const Help = () => {
   const helptiket = [
     {
