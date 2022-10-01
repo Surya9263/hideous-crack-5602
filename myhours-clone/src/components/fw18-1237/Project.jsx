@@ -28,6 +28,7 @@ import { useState } from "react";
 import AddNewProject from "./AddNewProject";
 
 export default function Project() {
+  
 
   const projectdata = JSON.parse(localStorage.getItem("project")) || []
 
@@ -58,7 +59,7 @@ export default function Project() {
           <Text fontWeight="600" fontSize="4xl">
             Projects
           </Text>
-          <Button colorScheme="blue">Add new project</Button>
+          <Button colorScheme="blue">Add new project</Button> 
         </Box>
 
         <Box display={"flex"} justifyContent="space-between">
