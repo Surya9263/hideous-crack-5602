@@ -43,6 +43,9 @@ export const signup = (creds) => async (dispatch) => {
     }
   };
 
-export const logout = () => async (dispatch) => {};
+export const logout = () => async (dispatch) => {
+
+   dispatch({ type :AUTH_LOGOUT})
+};
 
 // action me nexted function hote hai thunk ki wajah se 1 for promise and second for dispatch and asyncronas things.
