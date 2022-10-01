@@ -7,11 +7,20 @@ import Track_page from './components/Track_page/Track_page';
 function App() {
   return (
     <div>
+<<<<<<< HEAD
         {/* <Navbar/>
         <AllRoutes/>
          <Footer/> */}
          <Track_page/>
+=======
+  
+        {/* <Navbar/>
+        <AllRoutes/>
+         <Footer/> */}
+>>>>>>> a7c876677e05a372b158e08dee7ef8830b485ed4
 
+         <SimpleSidebar/>
+       
     </div>
   );
 }
