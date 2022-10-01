@@ -3,6 +3,52 @@
     font-family: Avenir Next, sans-serif;
 
 }
+.lightgrey{
+    color: lightgrey;
+}
+
+.trackform1{
+    width:65%
+}
+.trackform2{
+    width:35%
+}
+/* today header part */
+@media only screen and (max-width: 760px) {
+    .trackheader {
+      flex-wrap: wrap;
+
+    }
+    .stopwatch{
+        margin-top: 1rem;
+    }
+.trackflex{
+    
+    flex-wrap: wrap;
+}
+
+.trackform1{
+    width: 100%;
+    margin: auto;
+    border: none;
+    /* border: solid ; */
+}
+.trackform2{
+    width: 100%;
+    margin: auto;
+    border: none;
+    margin-top: 2rem;
+}
+.dataform{
+    flex-wrap: wrap;
+}
+.datasubbox{
+    margin-top: 1rem;
+}
+.cancel{
+    display: none;
+}
+  }
 
 
 .tfont{

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useStopwatch } from './useStopwatch';
 import { TimeIcon } from '@chakra-ui/icons';
 import { BsStopFill } from "react-icons/bs";
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 
 export const Stopwatch = () => {
+
   const [start, setStart] = useState(false);
   const { setStartTimer, setTime, time } = useStopwatch(0);
-
   return (
     <Box>
       <Flex gap='4'>
@@ -19,6 +19,7 @@ export const Stopwatch = () => {
             onClick={() => {
               setStartTimer(false);
               setStart(false);
+              localStorage.setItem("time",time)
             }}>
             < BsStopFill  margin={'0.5em'} />
             Stop
