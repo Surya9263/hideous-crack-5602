@@ -5,6 +5,7 @@ import {
   useColorModeValue,
   Text,
   Image,
+  Button,
 } from "@chakra-ui/react";
 import styles from "./dashboard.module.css";
 import { MdOutlineTimer } from "react-icons/md";
@@ -22,6 +23,8 @@ import { useEffect, useState } from "react";
 import Apps from "./Apps";
 import AccountSetting from "./AcountSetting";
 import AllInnerRoutes from "../../InnerRoutes/AllInnerRoutes"
+import { useDispatch } from "react-redux";
+import { logout } from "../../Store/auth/auth.actions";
 
 
 // mian function
@@ -47,6 +50,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
   const [isActive2, setIsActive2] = useState(false);
   const [isActive3, setIsActive3] = useState(false);
  
+  const dispatch = useDispatch();
+
   const [items, setItems] = useState([]);
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('Mycred'));
@@ -55,7 +60,10 @@ const SidebarContent = ({ onClose, ...rest }) => {
     }
   }, [items]);
  
-     console.log("my Email",items.email);
+  
+  const handleLogout = ()=>{
+    dispatch(logout())
+  }
 
 
   return (
@@ -369,7 +377,9 @@ const SidebarContent = ({ onClose, ...rest }) => {
           >
             <Icon mr="4" fontSize="20" as={FaRegUser} />
 
-            <Text>{items.email}</Text>
+            <Button  colorScheme='pink' variant='solid' onClick={handleLogout} >
+  Log out
+  </Button>
           </Flex>
         </Link>
       </Box>
