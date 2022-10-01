@@ -24,18 +24,34 @@ import {
   CopyIcon,
 } from "@chakra-ui/icons";
 import styles from "./Project.module.css";
+import { useState } from "react";
+import AddNewProject from "./AddNewProject";
 
 export default function Project() {
+
+  const projectdata = JSON.parse(localStorage.getItem("project")) || []
+
+  const [data, setData] = useState(projectdata)
+  const handleDelete = (id) => {
+       const newprojectdata = projectdata.filter(elem=>{
+             return elem.id != id
+       })
+
+       localStorage.setItem("project",JSON.stringify(newprojectdata))
+       setData(newprojectdata)
+  }
+
   return (
+    <>
     <Box
-      h={"92vh"}
+      h={"auto"}
       pt="30px"
       pr={"30px"}
       pl="30px"
       pb={"75px"}
-      w={"1109px"}
+      w={"100%"}
       border="1px"
-      borderColor="black"
+      borderColor="gray.300"
     >
       <Box h={"100%"} border="1px" borderColor="white">
         <Box display="flex" justifyContent="space-between" alignItems="center">
@@ -118,6 +134,7 @@ export default function Project() {
         <TableContainer>
           <Table variant="simple">
             <TableCaption></TableCaption>
+            
             <Thead>
               <Tr>
                 <Th>NAME</Th>
@@ -129,24 +146,34 @@ export default function Project() {
                 <Th>ACTION</Th>
               </Tr>
             </Thead>
+
             <Tbody>
-              <Tr>
-                <Td>Aman</Td>
-                <Td>Sushant</Td>
-                <Td isNumeric>25</Td>
-                <Td>100</Td>
-                <Td>50</Td>
-                <Td>28-9-2022</Td>
-                <Td display={"flex"} gap="5px">
-                  <DeleteIcon />
-                  <EditIcon />
-                  <CopyIcon />
-                </Td>
-              </Tr>
+              { 
+              data.map((elem)=> <Tr>
+              <Td>{elem.projectName}</Td>
+              <Td>{elem.client}</Td>
+              <Td  isNumeric >{elem.hours}</Td>
+              <Td>{elem.billamount}</Td>
+              <Td>0</Td>
+              <Td>{elem.date}-{+elem.month + 1}-{elem.year}</Td>
+              <Td display={"flex"} gap="5px">
+                <DeleteIcon cursor={"pointer"} onClick={()=>handleDelete(elem.id)} />
+                {/* <EditIcon /> */}
+                {/* <CopyIcon /> */}
+              </Td>
+            </Tr>
+              
+              
+              
+              )
+             }
             </Tbody>
           </Table>
         </TableContainer>
       </Box>
     </Box>
+
+    <AddNewProject setData={setData}/>
+    </>
   );
 }
