@@ -24,8 +24,7 @@ const Clients = () => {
 		}
 		setSearch(sum);
 	}
-
-	// console.log(search);
+	
   return (
     <>
     <Flex height={'100vh'} justifyContent='space-between'>
