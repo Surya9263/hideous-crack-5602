@@ -7,6 +7,7 @@ const SearchSortButton = () => {
 
 	const operationSearchFilter = (searchBy) =>{
 		setSearchFilter(searchBy);
+		// sortFun(searchBy);
 	};
 
 	
@@ -18,9 +19,9 @@ const SearchSortButton = () => {
 	</PopoverTrigger>
 	<PopoverContent width={'150px'}>
 	 <Flex direction={'column'}>
-		<Text _hover={{"bg": "rgb(240,241,242)"}} bg={(searchFilter === "Status") ? "rgb(221,239,250)": "none"} p={"8px 15px"} onClick={()=> operationSearchFilter('Status')}>All</Text>
-		<Text _hover={{"bg": "rgb(240,241,242)"}} bg={(searchFilter === "Archived") ? "rgb(221,239,250)": "none"} p={"8px 15px"} onClick={()=> operationSearchFilter('Archived')}>Archived</Text>
-		<Text _hover={{"bg": "rgb(240,241,242)"}} bg={(searchFilter === "Active") ? "rgb(221,239,250)": "none"} p={"8px 15px"} onClick={()=> operationSearchFilter('Active')}>Active</Text>	
+		<Text _hover={{"bg": "rgb(240,241,242)"}} bg={(searchFilter === "Status") ? "rgb(221,239,250)": "none"} p={"8px 15px"} onClick={()=> operationSearchFilter('Status')} cursor={'pointer'}>All</Text>
+		<Text _hover={{"bg": "rgb(240,241,242)"}} bg={(searchFilter === "Archived") ? "rgb(221,239,250)": "none"} p={"8px 15px"} onClick={()=> operationSearchFilter('Archived')} cursor={'pointer'}>Archived</Text>
+		<Text _hover={{"bg": "rgb(240,241,242)"}} bg={(searchFilter === "Active") ? "rgb(221,239,250)": "none"} p={"8px 15px"} onClick={()=> operationSearchFilter('Active')} cursor={'pointer'}>Active</Text>	
 	 </Flex>
 	</PopoverContent>
 	</Popover>

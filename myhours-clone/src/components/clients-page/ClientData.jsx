@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {MdSettings} from "react-icons/md";
 import {FaCaretDown} from "react-icons/fa";  
 import {HiOutlineArrowNarrowUp, HiOutlineArrowNarrowDown} from "react-icons/hi"; 
+import { useNavigate} from 'react-router-dom';
 
 const ClientData = ({newData}) => {
 	var clientData = newData.length===0 ? JSON.parse(localStorage.getItem("clients")) || [] : newData;
@@ -12,6 +13,7 @@ const ClientData = ({newData}) => {
 	const [sortContact, setSortContact] = useState(false);
 	const [sortDetails, setSortDetails] = useState(false);
 	const [sortStatus, setSortStatus] = useState(false);
+	const navigate = useNavigate();
 	
 	const sortByName=()=>{
 		setSortName(!sortName);
@@ -56,9 +58,33 @@ const ClientData = ({newData}) => {
 	}
 
 	const deleteClient=(id)=>{
+		let deleteData = clientData.filter((C)=> C.id !== id)
+		localStorage.setItem("clients", JSON.stringify(deleteData));
+		setAction(0)
+	};
 
-	}
-	// console.log(clientData);
+	const archiveClient = (id)=>{
+		let updateClient=clientData.map((client)=>{
+			if(client.id===id){
+				let newObj=client;
+				if(newObj.status==="Active"){
+					newObj.status="Archived";
+				}else{
+					newObj.status="Active";
+				}
+				return newObj;
+			}
+			return client;
+		})
+
+		localStorage.setItem("clients", JSON.stringify(updateClient));
+		setAction(0)
+	};
+
+	const editClient = (id) =>{ 
+		navigate(id)
+	};
+
   return (
     <>
     <TableContainer>
@@ -85,7 +111,7 @@ const ClientData = ({newData}) => {
 		):(
 	  <Tbody>
 		{clientData.map((client, i)=>(
-		    <Tr key={i}>
+		    <Tr key={client.id}>
 			<Td fontSize={'14px'}>{client.name}</Td>
 			<Td fontSize={'14px'}>{client.phone}</Td>
 			<Td fontSize={'14px'}>{client.email}</Td>
@@ -97,9 +123,9 @@ const ClientData = ({newData}) => {
 					<FaCaretDown />
 					</Flex>
 					<Flex direction={'column'} fontSize={'14px'}>
-						<Text cursor={'pointer'} _hover={{"bg": "rgb(221,239,250)"}} p={"3px 10px"}>Edit</Text>
-						<Text cursor={'pointer'} _hover={{"bg": "rgb(221,239,250)"}} p={"3px 10px"}>Archive</Text>
-						<Text cursor={'pointer'} _hover={{"bg": "rgb(221,239,250)"}} p={"3px 10px"} onClick={()=> deleteClient(i)}>Delete</Text>
+						<Text cursor={'pointer'} _hover={{"bg": "rgb(221,239,250)"}} p={"3px 10px"} onClick={()=> editClient(client.id)}>Edit</Text>
+						<Text cursor={'pointer'} _hover={{"bg": "rgb(221,239,250)"}} p={"3px 10px"} onClick={()=> archiveClient(client.id)}>{client.status==="Active" ? "Archived" : "Restore"}</Text>
+						<Text cursor={'pointer'} _hover={{"bg": "rgb(221,239,250)"}} p={"3px 10px"} onClick={()=> deleteClient(client.id)}>Delete</Text>
 					</Flex>
 				</Box>
 			):(
