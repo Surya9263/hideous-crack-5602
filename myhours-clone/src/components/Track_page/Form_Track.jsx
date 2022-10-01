@@ -42,9 +42,9 @@ const  Data =JSON.parse(localStorage.getItem('clientData')) || []
   const [data,setData]=useState(init)
   const [style,setStyle]=useState(fstyle);
   const {bold,italic,h1,h2,Aa}=style
-  useEffect(()=>{
-    localStorage.setItem("clientData",JSON.stringify([data,...Data]))
-  },[])
+  // useEffect(()=>{
+  //   localStorage.setItem("clientData",JSON.stringify([data,...Data]))
+  // },[])
 
 // handle form data or input data
   function handleChange(e){
