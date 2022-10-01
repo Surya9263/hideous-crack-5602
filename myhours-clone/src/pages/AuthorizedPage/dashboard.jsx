@@ -18,8 +18,9 @@ import { FiHelpCircle } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
 import { MdOutlinePhoneIphone } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Apps from "./Apps";
+import AccountSetting from "./AcountSetting";
 
 // mian function
 export default function SimpleSidebar() {
@@ -41,7 +42,18 @@ const SidebarContent = ({ onClose, ...rest }) => {
   const [isActive1, setIsActive1] = useState(false);
   const [isActive2, setIsActive2] = useState(false);
   const [isActive3, setIsActive3] = useState(false);
-  console.log("abjksbfjsf", isActive1);
+ 
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('Mycred'));
+    if (items) {
+     setItems(items);
+    }
+  }, [items]);
+ 
+     console.log("abjksbfjs",items.email);
+
+
   return (
     <Box
       bg={useColorModeValue("white", "gray.900")}
@@ -353,7 +365,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
           >
             <Icon mr="4" fontSize="20" as={FaRegUser} />
 
-            <Text>Pushpraj Patel </Text>
+            <Text>{items.email}</Text>
           </Flex>
         </Link>
       </Box>

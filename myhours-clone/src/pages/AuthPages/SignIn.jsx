@@ -13,7 +13,7 @@ import {
   useColorModeValue,
   Image,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../Store/auth/auth.actions";
@@ -43,10 +43,11 @@ export default function Login() {
     });
   };
 
-  // useEffect(()=>{
-  //   if(token){
-  //     navigate("/")
-  //   } })
+  useEffect(()=>{
+    if(token){
+      localStorage.setItem("Mycred", JSON.stringify(creds));
+      // navigate("/home")
+    } })
 
   return (
     <Flex
