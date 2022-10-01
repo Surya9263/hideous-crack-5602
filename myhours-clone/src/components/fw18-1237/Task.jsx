@@ -62,7 +62,7 @@ export default function Task(){
         
         <Box>
           <Text mb={"10px"} fontWeight={"600"}>
-            ASSIGN TASK
+            Select Team
             <Box display={"flex"} gap="10px" >
            {
            init.assign.map((elem)=><Text>{elem}</Text>)

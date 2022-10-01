@@ -32,10 +32,7 @@ function Track_page() {
       <Box
         p="20px 50px"
         w={"100%"}
-        border={"solid"}
-        // bgColor="gray.300"
       >
-        {/* todays */}
         <Flex className="trackheader" justify="space-between" fontSize="25" pb={"7"} color="#375D75">
           <Flex gap="5">
             <Text fontSize={"30px"}>

@@ -7,7 +7,7 @@ import { ImAttachment } from "react-icons/im";
 import { VscCaseSensitive } from "react-icons/vsc";
 import {AiFillCaretDown} from "react-icons/ai"
 import {AiFillCaretUp} from "react-icons/ai";
-import SimpleSidebar from './Dashboard';
+
 const AddTeam = () => {
     const [data,setData]=useState([]);
     const [name,setName]=useState("");
@@ -33,7 +33,6 @@ const AddTeam = () => {
     localStorage.setItem("Team",JSON.stringify(data));
   return (
     <>
-    <SimpleSidebar/>
     <FormControl w="40%" color="gray" >
         <FormLabel fontSize="small">NAME</FormLabel>
             <Input onChange={(e)=>setName(e.target.value)} autoFocus  type='text' />

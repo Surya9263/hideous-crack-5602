@@ -27,9 +27,9 @@ const Clients = () => {
 	
   return (
     <>
-    <Flex height={'100vh'} justifyContent='space-between'>
-	<Box width={'15.5%'} bg={'rgb(238,241,242)'}></Box>
-	<Box width={'84.5%'} p={8}>
+    <Flex >
+	{/* <Box width={'15.5%'} bg={'rgb(238,241,242)'}></Box> */}
+	<Box width="100%" p={8}>
 		<Flex justifyContent={'space-between'} margin={'auto'}>
 			<Flex alignItems={'center'} gap={3} >
 			<Text fontSize={'30px'} fontWeight={500} >Clients </Text>

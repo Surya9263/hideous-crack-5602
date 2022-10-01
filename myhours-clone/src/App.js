@@ -1,28 +1,24 @@
 
-
-
-import AddNewProject from "./components/fw18-1237/AddNewProject";
+import { useSelector } from "react-redux";
 import Footer from "./components/fw18-1237/Footer";
 import Navbar from "./components/fw18-1237/Navbar";
-import Project from "./components/fw18-1237/Project";
-import Support from "./components/fw18-1237/Support";
-import Task from "./components/fw18-1237/Task";
-import Help from "./pages/AuthorizedPage/Help";
-import Login from "./pages/AuthPages/SignIn";
+import SimpleSidebar from "./pages/AuthorizedPage/dashboard"
+import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
-  return (
-    <div>
-      {/* <Login/> */}
-      {/* <Help/> */}
-      {/* {/* <Navbar/> */}
-      {/* <Support/> */}
-      {/* <Footer/>  */}
-      <Project/>
-      {/* <AddNewProject/> */}
-      {/* <Task/> */}
 
-      
+  const token = useSelector((state) => state.auth.token);
+
+  if(token){
+    return <SimpleSidebar/>
+  }
+  else return (
+    <div>
+      <Navbar/> 
+      <AllRoutes/>
+      <Footer/>
+       
+       
 </div>
 )
 

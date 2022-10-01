@@ -5,10 +5,11 @@ import Login from '../pages/AuthPages/SignIn'
 import Success from '../pages/AuthPages/Success'
 import Terms from '../pages/AuthPages/Terms'
 import Signup from '../pages/AuthPages/SignUp'
-import Support from '../components/utkarsh/Support'
+
 import UseCasePage from '../components/useCasePage/UseCasePage'
 import HowItWorks from '../pages/HowItWorks'
 import Pricing from '../components/Pricing_page/Pricing'
+import Support from '../components/fw18-1237/Support'
 const AllRoutes = () => {
   return (
     <div>

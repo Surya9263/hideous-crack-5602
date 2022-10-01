@@ -35,9 +35,9 @@ const AddClient = () => {
 
   return (
     <>
-    <Flex height={'100vh'} justifyContent='space-between'>
-    <Box width={'15.5%'} bg={'rgb(238,241,242)'}></Box>
-	  <Box width={'84.5%'} p={8}>
+    <Flex backgroundColor="rgb(245,245,245)" >
+    
+	  <Box width="100%" p={8} >
     <form>
       <Box width={'49%'} margin={'auto'}>
         <Flex alignItems={'center'} gap={3}>
@@ -46,39 +46,39 @@ const AddClient = () => {
         </Flex>
         <Box mt={4} fontSize={'14px'}>
           <Text>NAME</Text>
-          <Input size='md' borderRadius={6} type="text" name='name' required onChange={onChange}/>
+          <Input size='md' borderRadius={6} type="text" name='name' required onChange={onChange} bg="white" />
         </Box>
         <Box mt={4} fontSize={'14px'}>
           <Text>CONTACT PERSON</Text>
-          <Input size='md' borderRadius={6} type="text" name='contactPerson' onChange={onChange}/>
+          <Input size='md' borderRadius={6} type="text" name='contactPerson' onChange={onChange} bg="white" />
         </Box>
         <Box mt={4} fontSize={'14px'}>
           <Text>EMAIL</Text>
-          <Input size='md' borderRadius={6} type="email" name='email' required onChange={onChange}/>
+          <Input size='md' borderRadius={6} type="email" name='email' required onChange={onChange} bg="white" />
         </Box>
         <Box mt={4} fontSize={'14px'}>
           <Text>PHONE</Text>
-          <Input size='md' borderRadius={6} type='number' name='phone' onChange={onChange}/>
+          <Input size='md' borderRadius={6} type='number' name='phone' onChange={onChange} bg="white" />
         </Box>
         <Box mt={4} fontSize={'14px'}>
           <Text>ADDRESS</Text>
-          <Textarea onChange={onChange} name='address' />
+          <Textarea onChange={onChange} name='address' bg="white"  />
         </Box>
         <br/>
         <hr/>
         <Flex mt={4} fontSize={'14px'} justifyContent={'space-between'}>
           <Box>
           <Text>TAX NAME</Text>
-          <Input size='md' borderRadius={6} type='text' onChange={onChange} name='taxName'/>
+          <Input size='md' borderRadius={6} type='text' onChange={onChange} name='taxName' bg="white" />
           </Box>
           <Box>
           <Text>TAX PERCENTAGE</Text>
-          <Input size='md' borderRadius={6} type='number' onChange={onChange} name='taxPercentage'/>
+          <Input size='md' borderRadius={6} type='number' onChange={onChange} name='taxPercentage' bg="white" />
           </Box>
         </Flex>
         <Box mt={4} fontSize={'14px'}>
           <Text>TAX NUMBER</Text>
-          <Input size='md' borderRadius={6} type='number' name='taxNumber' onChange={onChange}/>
+          <Input size='md' borderRadius={6} type='number' name='taxNumber' onChange={onChange} bg="white" />
         </Box>
         <Flex mt={4} gap={4}>
           <Button isLoading={loading} bg="rgb(129,183,217)" color={"white"} onClick={onSubmit}>Save</Button>

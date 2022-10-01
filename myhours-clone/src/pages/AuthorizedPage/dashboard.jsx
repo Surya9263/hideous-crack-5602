@@ -21,6 +21,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Apps from "./Apps";
 import AccountSetting from "./AcountSetting";
+import AllInnerRoutes from "../../InnerRoutes/AllInnerRoutes"
+
 
 // mian function
 export default function SimpleSidebar() {
@@ -32,7 +34,9 @@ export default function SimpleSidebar() {
 
 
        {/* ************************************* YOU CAN ADD COMPONENTS below HERE ********************************************* */}
-       
+         
+         <AllInnerRoutes/>
+
       </Box>
     </Box>
   );
@@ -51,7 +55,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
     }
   }, [items]);
  
-     console.log("abjksbfjs",items.email);
+     console.log("my Email",items.email);
 
 
   return (
@@ -65,12 +69,12 @@ const SidebarContent = ({ onClose, ...rest }) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Link to="#">
+        <Link to="/allHours" target="_blank" >
           <BsGrid3X3GapFill />
         </Link>
 
         {/* logo ########### */}
-        <Link to="#">
+        <Link to="/login/">
           <Image
             w="120px"
             src="https://allhoursproductb0b1.blob.core.windows.net/static-files/myhours_logo_icon.svg"
@@ -87,7 +91,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         {/* link 1 ************************************************* */}
 
         <Link
-          href="#"
+           to="/login/"
           style={{ textDecoration: "none" }}
           _focus={{ boxShadow: "none" }}
         >
@@ -118,7 +122,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         {/* link 2 ************************************************* */}
 
         <Link
-          href="#"
+          to="/projects"
           style={{ textDecoration: "none" }}
           _focus={{ boxShadow: "none" }}
         >
@@ -141,7 +145,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 
         {/* link 3 dropdown ************************************************* */}
         <div className={styles.dropdown}>
-          <Link to="#">
+          <Link to="/projects">
             {" "}
             <div
               className={styles.btn}
@@ -176,7 +180,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </div>
 
         <div className={styles.dropdown}>
-          <Link to="#">
+          <Link to="/clients">
             {" "}
             <div
               className={styles.btn}
@@ -205,7 +209,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </div>
 
         <div className={styles.dropdown}>
-          <Link to="#">
+          <Link to="/users">
             {" "}
             <div
               className={styles.btn}
@@ -220,11 +224,11 @@ const SidebarContent = ({ onClose, ...rest }) => {
 
           {isActive3 && (
             <div className={styles.content}>
-              <Link to="#">
+              <Link to="/users">
                 {" "}
                 <div className={styles.item}>Team members</div>{" "}
               </Link>
-              <Link to="#">
+              <Link to="/users">
                 {" "}
                 <div className={styles.item}>Teams</div>{" "}
               </Link>
@@ -252,7 +256,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         {/* link down *****************************   ***************************************       ****************************************************/}
 
         <Link
-          href="#"
+          to="/help"
           style={{ textDecoration: "none" }}
           _focus={{ boxShadow: "none" }}
         >
@@ -276,7 +280,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         {/* link down 2 *****************************   ***************************************       ****************************************************/}
 
         <Link
-          href="/apps"
+           to="/apps"
           style={{ textDecoration: "none" }}
           _focus={{ boxShadow: "none" }}
         >
@@ -300,7 +304,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         {/* link down 3 *****************************   ***************************************       ****************************************************/}
 
         <Link
-          href="#"
+          to="/whatNew"
           style={{ textDecoration: "none" }}
           _focus={{ boxShadow: "none" }}
         >
@@ -324,7 +328,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         {/* link down 4 *****************************   ***************************************       ****************************************************/}
 
         <Link
-          href="#"
+          to="/accountSetting"
           style={{ textDecoration: "none" }}
           _focus={{ boxShadow: "none" }}
         >
@@ -348,7 +352,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         {/* link down 5 *****************************   ***************************************       ****************************************************/}
 
         <Link
-          href="#"
+          to="/UserCreds"
           style={{ textDecoration: "none" }}
           _focus={{ boxShadow: "none" }}
         >

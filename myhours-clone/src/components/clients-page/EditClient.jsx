@@ -49,9 +49,8 @@ const EditClient = () => {
 
   return (
     <>
-    <Flex height={'100vh'} justifyContent='space-between'>
-    <Box width={'15.5%'} bg={'rgb(238,241,242)'}></Box>
-	<Box width={'84.5%'} p={8}>
+    <Flex >
+	<Box width="100%" p={8}>
       <form>
       <Box width={'49%'} margin={'auto'}>
         <Flex alignItems={'center'} gap={3}>

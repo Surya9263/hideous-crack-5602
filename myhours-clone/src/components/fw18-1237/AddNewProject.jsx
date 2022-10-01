@@ -66,23 +66,7 @@ export default function AddNewProject({setData}) {
     });
   };
 
-  useEffect(() => {
-    localStorage.setItem(
-      "teams",
-      JSON.stringify([
-        { id: 1, name: "utkarsh" },
-        { id: 2, name: "pushparaj" },
-        { id: 3, name: "surya" },
-        { id: 4, name: "shridhar" },
-        { id: 5, name: "dinesh" },
-        // { id: 6, name: "kl" },
-        // { id: 7, name: "mn" },
-        // { id: 8, name: "op" },
-        // { id: 9, name: "qr" },
-      ])
-    );
-  }, []);
-
+ 
   return (
     <Box
       h={"auto"}
