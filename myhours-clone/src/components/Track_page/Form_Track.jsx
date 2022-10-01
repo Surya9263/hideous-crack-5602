@@ -19,6 +19,8 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+import { useStopwatch } from "./useStopwatch";
+import { Stopwatch } from "./Stopwatch";
 // ## work completed
 
 // initial object data
@@ -38,6 +40,7 @@ const fstyle={
 
 function FormTrack({setOpen,status,setStatus}) {
   // const Data = JSON.parse(localStorage.getItem('clientData')) || [];
+  const { setStartTimer, setTime, time } = useStopwatch(0);
 const  Data =JSON.parse(localStorage.getItem('clientData')) || []
   const [data,setData]=useState(init)
   const [style,setStyle]=useState(fstyle);
@@ -71,7 +74,7 @@ alert("Project added and Started Timer")
 
 
   return (
-    <Box className="trackform" padding={"1.5rem"} lineHeight={"2rem"}>
+    <Box className="trackform" padding={"1.5rem"} lineHeight={"2rem"} width='100%'>
       <Flex color={"#375d75"} justifyContent={"space-between"}>
         <Box fontSize={"23"} >
           Add a time log <SettingsIcon style={{ fontSize: "15px" }} />
@@ -82,8 +85,10 @@ alert("Project added and Started Timer")
         </Box>
       </Flex>
       {/* form inputs */}
-      <Flex >
-        <Box  width={"65%"} mr="1rem" borderRight="1px solid lightgrey">
+      <Flex className="trackflex" w={'100%'}  >
+        <Box className="trackform1" 
+        // width={"65%"}
+        mr="1rem" borderRight="1px solid lightgrey">
           <label className="tfont">
             CLIENT & PROJECT< sup className='redsup'>*</sup>
             <InputGroup border="0.5rem" width={"97%"} m={"3px 0"}>
@@ -151,10 +156,12 @@ alert("Project added and Started Timer")
               onChange={(e)=>handleChange(e)}  />
             </Box>
         </Box>
-        <Box width={"35%"} mb={'2rem'}>
+        <Box className="trackform2"
+        //  width={"35%"}
+          mb={'2rem'}>
           <Box width={"95%"} m={"auto"}>
           <label className="tfont">
-            TIME & DATE
+            TIME & DATE <span className="lightgrey">(optional)</span>
             <InputGroup textAlign={"center"} border="0.5rem" width={"100%"} m={"3px 0"}>
               <InputLeftElement children={<BsHourglassTop color="grey" />} />
               <Input type="text" placeholder="Duration..." />
@@ -164,7 +171,7 @@ alert("Project added and Started Timer")
           <Flex gap={"2"} mb={2}>
             <Box width={"50%"}>
               <label className="tfont">
-                TASK
+                TASK <span className="lightgrey">(optional)</span>
                 <InputGroup border="0.5rem" m={"3px 0"}>
                   <InputLeftElement children={<WiTime8 color="grey" />} />
                   <Input type="text" placeholder="Start time..." />
@@ -173,7 +180,7 @@ alert("Project added and Started Timer")
             </Box>
             <Box width={"50%"}>
               <label className="tfont">
-                TAGS
+                TAGS <span className="lightgrey">(optional)</span>
                 <InputGroup border="0.5rem" m={"3px 0"}>
                   <InputLeftElement children={<WiTime5 color="grey" />} />
                   <Input type="text" placeholder="End Time..." />
@@ -186,7 +193,7 @@ alert("Project added and Started Timer")
           </Flex>
           <Box>
             <label className="tfont">
-            EXPENSES
+            EXPENSES <span className="lightgrey">(optional)</span>
             <InputGroup textAlign={"center"} border="0.5rem" width={"100%"} m={"3px 0"}>
               <InputLeftElement children={<BiDollar color="grey" />} />
               <Input type="text" placeholder="Enter Expenses amount..." />
@@ -240,11 +247,12 @@ alert("Project added and Started Timer")
           onClick={()=>{
             handleSubmit()
             setOpen(prev=>!prev)
+        
           }}
           >Start & Close</Button>
         </Box>
         
-        <Box>
+        <Box className="cancel">
           <Text className="close" color={'blue'}
           _hover={{textDecoration:'underline'}}
           onClick={()=>setOpen(p=>!p)}

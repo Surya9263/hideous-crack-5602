@@ -28,149 +28,152 @@ function Track_page() {
   const [date, setDate] = useState(now.getDate());
   // console.log(time)
   return (
-    <Box
-      w="80%"
-      p="20px 50px"
-      m={"auto"}
-      border={"solid"}
-      // bgColor="gray.300"
-    >
-      {/* todays */}
-      <Flex justify="space-between" fontSize="25" pb={"7"} color="#375D75">
-        <Flex gap="5">
-          <Text fontSize={"30px"}>
-            Today, {date} {nows[1]}
-          </Text>
+    <Flex w="80%" m={"auto"}>
+      <Box
+        p="20px 50px"
+        w={"100%"}
+        border={"solid"}
+        // bgColor="gray.300"
+      >
+        {/* todays */}
+        <Flex className="trackheader" justify="space-between" fontSize="25" pb={"7"} color="#375D75">
+          <Flex gap="5">
+            <Text fontSize={"30px"}>
+              Today, {date} {nows[1]}
+            </Text>
 
-          <Box>
-            <Input type="date" w="50px" border={"none"} />
-          </Box>
-          <Box>
-            <ArrowBackIcon mt={"1"} fontSize={"1.5rem"} />
-          </Box>
-          <Box>
-            <ArrowForwardIcon mt={"1"} fontSize={"1.5rem"} />
-          </Box>
-          <Box mt={2}>
-            <AiOutlineHome mt={"2"} fontSize={"1.5rem"} />
-          </Box>
+            <Box>
+              <Input type="date" w="50px" border={"none"} />
+            </Box>
+            <Box>
+              <ArrowBackIcon mt={"1"} fontSize={"1.5rem"} />
+            </Box>
+            <Box>
+              <ArrowForwardIcon mt={"1"} fontSize={"1.5rem"} />
+            </Box>
+            <Box mt={2}>
+              <AiOutlineHome mt={"2"} fontSize={"1.5rem"} />
+            </Box>
+          </Flex>
+          {/*  Stopwatch*/}
+          {/* <Stopwatch setStartTimer={setStartTimer} time={time} setTime={setTime} /> */}
+          <Box className="stopwatch">
+          <Stopwatch />
+            </Box>
         </Flex>
-        {/*  Stopwatch*/}
-        {/* <Stopwatch setStartTimer={setStartTimer} time={time} setTime={setTime} /> */}
-        <Stopwatch/>
-      </Flex>
-      {/* +Addt timeline */}
-      <Flex justifyContent="space-between" mb={"1.5rem"}>
-        <Box>
-          <Button
-            color="#375D75"
-            bgColor={"#dceefa"}
-            _hover={{ color: "#375D75", bgColor: "#dceefa" }}
-            onClick={() => setOpen(!open)}
-          >
-            <AiOutlinePlus /> Add time log
-          </Button>
-        </Box>
-        <Flex>
-          <Flex gap="5" color="#375D75">
-            <Button bgColor={"#dceefa"}>
-              <AiOutlineSmallDash />
+        {/* +Addt timeline */}
+        <Flex justifyContent="space-between" mb={"1.5rem"}>
+          <Box>
+            <Button
+              color="#375D75"
+              bgColor={"#dceefa"}
+              _hover={{ color: "#375D75", bgColor: "#dceefa" }}
+              onClick={() => setOpen(!open)}
+            >
+              <AiOutlinePlus /> Add time log
             </Button>
-            <Button gap="2" bgColor={"#dceefa"}>
-              <AiOutlineMenu />
-              {/* Timeline */}
-            </Button>
-            <Button gap="2" bgColor={"#dceefa"}>
-              <AiOutlineStar />
-              {/* Favourite logs */}
-            </Button>
+          </Box>
+          <Flex>
+            <Flex gap="5" color="#375D75">
+              <Button bgColor={"#dceefa"}>
+                <AiOutlineSmallDash />
+              </Button>
+              <Button gap="2" bgColor={"#dceefa"}>
+                <AiOutlineMenu />
+                {/* Timeline */}
+              </Button>
+              <Button gap="2" bgColor={"#dceefa"}>
+                <AiOutlineStar />
+                {/* Favourite logs */}
+              </Button>
+            </Flex>
           </Flex>
         </Flex>
-      </Flex>
-      {/* form box */}
-      {open ? (
-        ""
-      ) : (
-        <FormTrack setOpen={setOpen} status={status} setStatus={setStatus} />
-      )}
+        {/* form box */}
+        {open ? (
+          ""
+        ) : (
+          <FormTrack setOpen={setOpen} status={status} setStatus={setStatus} />
+        )}
 
-      {/* Project or client data */}
-      {/* data mapping */}
-      {Data.map((e, i) => (
-        <Box key={i} border={"1px solid"}>
-          <Flex justify={"space-between"} p="5">
-            <Box>
-              <Flex gap="2" color={"#373d74"}>
-                {!e.client ? (
-                  <AiFillEdit style={{ marginTop: "4px" }} />
-                ) : (
-                  <AiFillFolderOpen style={{ marginTop: "4px" }} />
-                )}
-                <Text style={!e.client ? { color: 'grey' } : {}}>{!e.client ? 'Add a Project,task or tag' : e.client}</Text>
-                {/* task */}
-                <Text>
-                  {e.task ? (
-                    <AiOutlineCheck
-                      color='black'
-                      style={{ marginTop: '4px' }} />
+        {/* Project or client data */}
+        {/* data mapping */}
+        {Data.map((e, i) => (
+          <Box key={i} border={"1px solid"}>
+            <Flex className="dataform" justify={"space-between"} p="5" w={'100%'}>
+              <Box className="datasubbox">
+                <Flex gap="2" color={"#373d74"}>
+                  {!e.client ? (
+                    <AiFillEdit style={{ marginTop: "4px" }} />
                   ) : (
-                    ''
+                    <AiFillFolderOpen style={{ marginTop: "4px" }} />
                   )}
-                </Text>
-                <Text>{e.task ? e.task : ''}</Text>
-                {/* tags */}
-                <Text
-                  bg={'#CCE5FF'}
-                  borderRadius={'5px'}
-                  color={'#0062CC'}
-                  fontSize={'12px'}
-                  p={'2px 5px'}
+                  <Text style={!e.client ? { color: "grey" } : {}}>
+                    {!e.client ? "Add a Project,task or tag" : e.client}
+                  </Text>
+                  {/* task */}
+                  <Text>
+                    {e.task ? (
+                      <AiOutlineCheck
+                        color="black"
+                        style={{ marginTop: "4px" }}
+                      />
+                    ) : (
+                      ""
+                    )}
+                  </Text>
+                  <Text>{e.task ? e.task : ""}</Text>
+                  {/* tags */}
+                  <Text
+                    bg={"#CCE5FF"}
+                    borderRadius={"5px"}
+                    color={"#0062CC"}
+                    fontSize={"12px"}
+                    p={"2px 5px"}
                   >
-                  {e.tags ? e.tags : 'Edit'}
-                </Text>
-                {/* remove btn */}
+                    {e.tags ? e.tags : "Edit"}
+                  </Text>
+                  {/* remove btn */}
+                  <Text
+                    color={"red"}
+                    bg={"rgba(255, 190, 150, 0.4)"}
+                    p={"1 "}
+                    borderRadius={"3px"}
+                    fontSize="12"
+                    cursor={"pointer"}
+                    onClick={() => {
+                      Data.splice(i, 1);
+                      localStorage.setItem("clientData", JSON.stringify(Data));
+
+                      setStatus((p) => !p);
+                    }}
+                  >
+                    remove
+                  </Text>
+                </Flex>
                 <Text
-                  color={'red'}
-                  bg={'rgba(255, 190, 150, 0.4)'}
-                  p={'1 '}
-                  borderRadius={'3px'}
-                  fontSize='12'
-                  cursor={'pointer'}
-                  onClick={() => {
-                    Data.splice(i, 1);
-                    localStorage.setItem(
-                      'clientData',
-                      JSON.stringify(Data)
-                    );
-
-                    setStatus(p => !p);
-
-                  } }>
-                  remove
+                  color={"#687481"}
+                  textAlign={"left"}
+                  style={!e.desc ? { color: "grey" } : {}}
+                >
+                  {!e.desc ? "Empty Description" : e.desc}
                 </Text>
-              </Flex>
-              <Text
-                color={'#687481'}
-                textAlign={'left'}
-                style={!e.desc ? { color: 'grey' } : {}}>
-                {!e.desc ? 'Empty Description' : e.desc}
-              </Text>
-            </Box>
+              </Box>
               {/* stopwatch */}
-            <Box> 
-            <Stopwatch />
-            {/* <Text>
+              <Box className="datasubbox">
+                <Stopwatch />
+                {/* <Text>
           <span>{('0' + Math.floor((time / 6000) % 60)).slice(-2)}:</span>
           <span>{('0' + Math.floor((time / 600) % 60)).slice(-2)}:</span>
           <span>{('0' + ((time / 10) % 60)).slice(-2)}</span>
         </Text> */}
-
-            </Box> 
-          </Flex>
-          <hr/>
-        </Box>
-      ))}
-    </Box>
+              </Box>
+            </Flex>
+            <hr />
+          </Box>
+        ))}
+      </Box>
+    </Flex>
   );
 }
 
