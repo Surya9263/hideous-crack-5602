@@ -14,6 +14,7 @@ import {
   Th,
   Tbody,
   Td,
+  Flex,
 } from "@chakra-ui/react";
 import { fdata, FreeList, ProList } from "./PricingDatabase";
 import FAQ from "./FAQ";
@@ -24,7 +25,7 @@ import Features from "./Features";
 
 function Pricing() {
   return (
-    <Box w="100%" width="80%" style={{ margin: "auto" }}>
+    <Box  width="80%" style={{ margin: "auto" }}>
       <Box>
         {/* headers */}
         <Box>
@@ -35,8 +36,8 @@ function Pricing() {
         </Box>
         {/* headers */}
         {/* lg md sm */}
-        <SimpleGrid columns={[2]} gap="9rem" m="2rem 0">
-          <Box padding="0 1rem">
+        <Flex className={style.priceheaderflex} gap="9rem" m="2rem 0">
+          <Box className={style.pricef1}  >
             <Text className={style.heading3}>Free</Text>
             <Text className={style.heading4}>
               For indivisuals or teams just getting started with time tracking.
@@ -58,13 +59,13 @@ function Pricing() {
             </ul>
             <Button
               bgColor=""
-              style={{ marginTop: "5.5rem" }}
+            
               className={style.pbtn}
             >
               Select
             </Button>
           </Box>
-          <Box>
+          <Box className={style.pricef2}>
             <Text className={style.heading3}>Pro</Text>
             <Text className={style.heading4}>
               For indivisuals or teams just getting started with time tracking.
@@ -97,7 +98,7 @@ function Pricing() {
               14 day free trial
             </Button>
           </Box>
-        </SimpleGrid>
+        </Flex>
         {/* Features */}
        <Features/>
         {/* FAQ */}

@@ -18,9 +18,8 @@ import {
   Text,
   Textarea,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import { useStopwatch } from "./useStopwatch";
-import { Stopwatch } from "./Stopwatch";
+import React, { useEffect, useRef, useState } from "react";
+
 // ## work completed
 
 // initial object data
@@ -28,7 +27,11 @@ const init={
   client:'',
   task:'',
   tags:'',
-  desc:''
+  desc:'',
+  dur:0,
+  st:0,
+  end:0,
+  exp:0
 }
 const fstyle={
   bold:false,
@@ -39,15 +42,12 @@ const fstyle={
 }
 
 function FormTrack({setOpen,status,setStatus}) {
-  // const Data = JSON.parse(localStorage.getItem('clientData')) || [];
-  const { setStartTimer, setTime, time } = useStopwatch(0);
-const  Data =JSON.parse(localStorage.getItem('clientData')) || []
+
+const  Data =JSON.parse(localStorage.getItem('TaskData')) || []
   const [data,setData]=useState(init)
   const [style,setStyle]=useState(fstyle);
   const {bold,italic,h1,h2,Aa}=style
-  // useEffect(()=>{
-  //   localStorage.setItem("clientData",JSON.stringify([data,...Data]))
-  // },[])
+
 
 // handle form data or input data
   function handleChange(e){
@@ -55,18 +55,18 @@ const  Data =JSON.parse(localStorage.getItem('clientData')) || []
     setData({...data,
     [name]:value
     })
-
+    
   }
-  const {client,task,desc,tags}=data
-  console.log(data)
+  const {client,task,desc,tags,dur,st,end,exp}=data
   function handleSubmit(){
-   
+
     if(!client||!task||!desc||!tags){
       alert("please fill Time Log section")
       return
     }
-else {localStorage.setItem("clientData",JSON.stringify([data,...Data]))
-alert("Project added and Started Timer")
+   
+else {localStorage.setItem("TaskData",JSON.stringify([data,...Data]))
+  // setData(init)
 }
 
   }
@@ -74,7 +74,7 @@ alert("Project added and Started Timer")
 
 
   return (
-    <Box className="trackform" padding={"1.5rem"} lineHeight={"2rem"} width='100%'>
+    <Box className="trackform" padding={"1.5rem"} lineHeight={"2rem"} width='100%' mb={'2rem'}>
       <Flex color={"#375d75"} justifyContent={"space-between"}>
         <Box fontSize={"23"} >
           Add a time log <SettingsIcon style={{ fontSize: "15px" }} />
@@ -88,12 +88,12 @@ alert("Project added and Started Timer")
       <Flex className="trackflex" w={'100%'}  >
         <Box className="trackform1" 
         // width={"65%"}
-        mr="1rem" borderRight="1px solid lightgrey">
+        mr="1rem" >
           <label className="tfont">
             CLIENT & PROJECT< sup className='redsup'>*</sup>
             <InputGroup border="0.5rem" width={"97%"} m={"3px 0"}>
               <InputLeftElement children={<FaToolbox color="grey" />} />
-              <Input type="text" placeholder="Select or create a project"
+              <Input type="text"  placeholder="Select or create a project"
               value={client}
              
               name='client'
@@ -107,7 +107,8 @@ alert("Project added and Started Timer")
                 TASK
                 <InputGroup border="0.5rem" m={"3px 0"}>
                   <InputLeftElement children={<CheckIcon color="grey" />} />
-                  <Input type="text" placeholder="Select or create a task"
+                  <Input type="text" placeholder="create a task"
+                  value={task}
                   name='task'
                   onChange={(e)=>handleChange(e)}
                   />
@@ -119,7 +120,8 @@ alert("Project added and Started Timer")
                 TAGS
                 <InputGroup border="0.5rem" m={"3px 0"}>
                   <InputLeftElement children={<TbTag color="grey" />} />
-                  <Input type="text" placeholder="Select or create a tags" name='tags'
+                  <Input type="text" placeholder="create a tags" name='tags'
+                  value={tags}
                   onChange={(e)=>handleChange(e)} />
                 </InputGroup>
               </label>
@@ -148,11 +150,13 @@ alert("Project added and Started Timer")
               </Flex>
             </Flex>
             
-              <Textarea border={"none"} borderTop={"1px solid"} placeholder="Here is a sample placeholder" size="sm" name='desc'
+              <Textarea border={"none"} borderTop={"1px solid"} placeholder="Here is a sample placeholder" size="sm" 
               fontWeight={bold?'bold':'normal'}
               fontStyle={italic?'italic':'none'}
               fontSize={h1?"30px":h2?"27px":""}
               color={'grey'}
+              value={desc} 
+              name='desc'
               onChange={(e)=>handleChange(e)}  />
             </Box>
         </Box>
@@ -164,7 +168,9 @@ alert("Project added and Started Timer")
             TIME & DATE <span className="lightgrey">(optional)</span>
             <InputGroup textAlign={"center"} border="0.5rem" width={"100%"} m={"3px 0"}>
               <InputLeftElement children={<BsHourglassTop color="grey" />} />
-              <Input type="text" placeholder="Duration..." />
+              <Input type="number" placeholder="Duration..."   value={dur} 
+              name='dur'
+              onChange={(e)=>handleChange(e)}  />
             </InputGroup>
           </label>
           {/* start time end time */}
@@ -174,7 +180,9 @@ alert("Project added and Started Timer")
                 TASK <span className="lightgrey">(optional)</span>
                 <InputGroup border="0.5rem" m={"3px 0"}>
                   <InputLeftElement children={<WiTime8 color="grey" />} />
-                  <Input type="text" placeholder="Start time..." />
+                  <Input type="number" placeholder="Start time..."  value={st} 
+              name='st'
+              onChange={(e)=>handleChange(e)}  />
                 </InputGroup>
               </label>
             </Box>
@@ -183,7 +191,9 @@ alert("Project added and Started Timer")
                 TAGS <span className="lightgrey">(optional)</span>
                 <InputGroup border="0.5rem" m={"3px 0"}>
                   <InputLeftElement children={<WiTime5 color="grey" />} />
-                  <Input type="text" placeholder="End Time..." />
+                  <Input type="number" placeholder="End Time..."  value={end} 
+              name='end'
+              onChange={(e)=>handleChange(e)}  />
                 </InputGroup>
               </label>
             </Box>
@@ -196,7 +206,9 @@ alert("Project added and Started Timer")
             EXPENSES <span className="lightgrey">(optional)</span>
             <InputGroup textAlign={"center"} border="0.5rem" width={"100%"} m={"3px 0"}>
               <InputLeftElement children={<BiDollar color="grey" />} />
-              <Input type="text" placeholder="Enter Expenses amount..." />
+              <Input type="number" placeholder="Enter Expenses amount..."  value={exp} 
+              name='exp'
+              onChange={(e)=>handleChange(e)}  />
             </InputGroup>
           </label>
             </Box>
@@ -238,7 +250,7 @@ alert("Project added and Started Timer")
           
             console.log("added")
           }}
-          >Start timer</Button>
+          >Add Project</Button>
         </Box>
         <Box>
           {/* start and close */}
@@ -246,10 +258,15 @@ alert("Project added and Started Timer")
           _hover={{bg:"rgb(127, 192, 138)",color:"white"}}
           onClick={()=>{
             handleSubmit()
-            setOpen(prev=>!prev)
+            if(client||task||desc||tags){
+              
+              setOpen(prev=>!prev)
+              return
+            }
+           
         
           }}
-          >Start & Close</Button>
+          >Add & Close</Button>
         </Box>
         
         <Box className="cancel">

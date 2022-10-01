@@ -6,13 +6,15 @@ import {IoIosArrowForward} from "react-icons/io"
 
 function ReadmoreSection() {
   return (
-    <Box className={style.b} >
+    // box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    <Box className={style.b} boxShadow='rgba(0, 0, 0, 0.09) 0px 3px 12px' >
       <Text className={style.readbox}>
         <span className={style.quatation}>“ </span> I have tested similar time
         tracking apps but they all have limits. My Hours is without a doubt the
         most important tool I use in my business. <span>”</span>
       </Text>
       <Box
+      className={style.readlink}
         display="flex"
         justifyContent="space-between"
         w="80%"

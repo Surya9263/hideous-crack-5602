@@ -8,13 +8,14 @@
 }
 
 .trackform1{
-    width:65%
+    width:65%;
+    border-right:1px solid lightgrey
 }
 .trackform2{
     width:35%
 }
 /* today header part */
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 950px) {
     .trackheader {
       flex-wrap: wrap;
 

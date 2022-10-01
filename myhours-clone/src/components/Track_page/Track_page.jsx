@@ -13,12 +13,21 @@ import {
   AiOutlineStar,
 } from "react-icons/ai";
 import FormTrack from "./Form_Track";
+import { Popup } from "./popup";
 import { Stopwatch } from "./Stopwatch";
 // import { useStopwatch } from "./useStopwatch";
-
+const init={
+  client:'',
+  task:'',
+  tags:'',
+  desc:''
+}
 function Track_page() {
-  const Data = JSON.parse(localStorage.getItem("clientData")) || [];
-
+  let Data = JSON.parse(localStorage.getItem("TaskData")) || [];
+  const [dummy,setdumy]=useState([init])
+if(Data.length===0){
+  Data=dummy
+}
   // const { setStartTimer, setTime, time } = useStopwatch(0);
   // const [start, setStart] = useState(false);
   const [open, setOpen] = useState(false);
@@ -26,9 +35,9 @@ function Track_page() {
   const now = new Date();
   const nows = now.toString().split(" ");
   const [date, setDate] = useState(now.getDate());
-  // console.log(time)
+  console.log(dummy,"dsfdfhsjkgh")
   return (
-    <Flex w="80%" m={"auto"}>
+    <Flex w="90%" m={"auto"}>
       <Box
         p="20px 50px"
         w={"100%"}
@@ -95,8 +104,8 @@ function Track_page() {
 
         {/* Project or client data */}
         {/* data mapping */}
-        {Data.map((e, i) => (
-          <Box key={i} border={"1px solid"}>
+        {Data?.map((e, i) => (
+          <Box key={i} border={"1px solid grey" } borderRadius='0.5rem'>
             <Flex className="dataform" justify={"space-between"} p="5" w={'100%'}>
               <Box className="datasubbox">
                 <Flex gap="2" color={"#373d74"}>
@@ -119,9 +128,9 @@ function Track_page() {
                       ""
                     )}
                   </Text>
-                  <Text>{e.task ? e.task : ""}</Text>
+                  <Text >{e.task ? e.task : ""}</Text>
                   {/* tags */}
-                  <Text
+                  {/* <Text
                     bg={"#CCE5FF"}
                     borderRadius={"5px"}
                     color={"#0062CC"}
@@ -129,7 +138,8 @@ function Track_page() {
                     p={"2px 5px"}
                   >
                     {e.tags ? e.tags : "Edit"}
-                  </Text>
+                  </Text> */}
+                  <Popup e={e} i={i} setStatus={setStatus}/>
                   {/* remove btn */}
                   <Text
                     color={"red"}
@@ -140,7 +150,7 @@ function Track_page() {
                     cursor={"pointer"}
                     onClick={() => {
                       Data.splice(i, 1);
-                      localStorage.setItem("clientData", JSON.stringify(Data));
+                      localStorage.setItem("TaskData", JSON.stringify(Data));
 
                       setStatus((p) => !p);
                     }}

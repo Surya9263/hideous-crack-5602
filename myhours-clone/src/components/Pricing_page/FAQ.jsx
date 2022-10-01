@@ -1,6 +1,6 @@
 import { Box, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import style from "./Pricing.module.css";
 import { Frequently_asked_questions } from "./PricingDatabase";
@@ -16,9 +16,10 @@ function FAQ() {
     setdata(updated);
   }
   return (
-    <Box width="90%" m="auto" >
+  
+    <Box width="90%" m="auto" mb='3rem'  boxShadow={'rgba(0, 0, 0, 0.1) 0px 1px 2px 0px'} borderRadius='0.5rem'>
       <Box className={style.headFaq}>
-        <Text>Frequently Asked Questions</Text>{" "}
+        <Text>Frequently Asked Questions</Text>
       </Box>
       {/* qns */}
       {data.map((e,i) => (
@@ -30,7 +31,7 @@ function FAQ() {
               color="grey"
               onClick={() => handleClick(e.id)}
             >
-              <FiChevronDown />
+              {e.status? <FiChevronUp/> :<FiChevronDown />}
             </Box>
           </Box>
           {e.status && <Box padding="0 2.5rem" fontSize="15px"  lineHeight="20px">{e.answer}</Box>}
