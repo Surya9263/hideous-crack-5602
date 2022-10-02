@@ -1,6 +1,6 @@
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import { Box, Button, Flex, Input, Text } from "@chakra-ui/react";
-
+import { Box, Button, Flex, Input,  Text } from "@chakra-ui/react";
+// import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import {
   AiFillEdit,
@@ -58,7 +58,10 @@ if(Data.length===0){
               <ArrowForwardIcon mt={"1"} fontSize={"1.5rem"} />
             </Box>
             <Box mt={2}>
+              {/* <Link to='/'> */}
+
               <AiOutlineHome mt={"2"} fontSize={"1.5rem"} />
+              {/* </Link> */}
             </Box>
           </Flex>
           {/*  Stopwatch*/}
