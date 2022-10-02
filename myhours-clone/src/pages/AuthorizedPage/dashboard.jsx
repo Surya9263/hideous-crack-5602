@@ -64,7 +64,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
   
   const handleLogout = ()=>{
     dispatch(logout())
-    navigate('/')
+    // navigate('/')
     
   }
 
@@ -78,6 +78,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       pos="fixed"
       h="full"
       {...rest}
+      overflowY="scroll"
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Link to="/allHours" target="_blank" >
@@ -97,7 +98,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       <Box
         color="rgb(167,184,194)"
         fontWeight="thin"
-        overflowY={isActive1 || isActive2 || isActive3 ? "scroll" : "none"}
+        
       >
         {/* link 1 ************************************************* */}
 
