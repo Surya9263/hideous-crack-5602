@@ -14,7 +14,9 @@ const LandingPage = () => {
       <p style={{fontFamily:'Avenir Next',fontSize:"28px", color:"rgb(55, 93, 117)"}}>Coordinate projects and tasks. Track your work hours and create awesome-looking reports for clients.<span style={{fontWeight:"bolder"}}> All-in-one free time tracking software.</span></p>
     </Box>
     <Box textAlign="center" mt="20">      
-          <Button p="8" colorScheme="telegram" backgroundColor="#3b8fc2" color="white" fontSize="20px">Get Started - It's Free</Button>
+        <Link to="/signup">
+         <Button p="8" colorScheme="telegram" backgroundColor="#3b8fc2" color="white" fontSize="20px">Get Started - It's Free</Button>
+        </Link> 
     </Box>
     <Flex>
         <Box m="auto" mt="20px">

@@ -83,7 +83,9 @@ const HowItWorks = () => {
 	<Text fontSize={'6xl'}>How it works</Text>
 	<Heading fontSize={'4xl'} color='rgb(54,92,117)'>& why you should switch to My Hours</Heading>
 	<Text fontSize={'3xl'} color='rgb(54,92,117)'>Time tracking was a pain. We fixed it and made time tracking worth the effort. My Hours is easy to use and gets the most out of your data with powerful reporting. Teams that use My Hours are more productive, efficient and organized.</Text>
-	<Button width={52} bg='rgb(59,143,194)' color={'white'} size='lg'>Get Startde - It's Free</Button>	
+	<Link to='/signup'> 
+	<Button  width={52} bg='rgb(59,143,194)' color={'white'} size='lg'>Get Startde - It's Free</Button>	
+	</Link>
     </Flex>
     <Flex width={[300, 500, 600, 700, 900]} height={[300, 412, 412, 462, 580]}  margin="auto" mt={20} mb={20} p={4}>
         <Box boxShadow='2xl' width={'100%'} height={'100%'}>

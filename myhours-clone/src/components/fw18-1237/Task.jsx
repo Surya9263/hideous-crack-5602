@@ -6,7 +6,7 @@ export default function Task(){
   const project = JSON.parse(localStorage.getItem("project")) || [];
   const task = JSON.parse(localStorage.getItem("task")) ||[]
 
-  const team = JSON.parse(localStorage.getItem("teams")) || [];
+  const team = JSON.parse(localStorage.getItem("Team")) || [];
 
     const [init, setInit] = useState({project:"", task:"", assign:[]})
 

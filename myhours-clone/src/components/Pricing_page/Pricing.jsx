@@ -22,10 +22,11 @@ import ReadmoreSection from "./ReadmoreSection";
 import HaveQn from "./HaveQn";
 import BottomSection from "./BottomSection";
 import Features from "./Features";
+import { Link } from "react-router-dom";
 
 function Pricing() {
   return (
-    <Box  width="80%" style={{ margin: "auto" }}>
+    <Box width="80%" style={{ margin: "auto" }}>
       <Box>
         {/* headers */}
         <Box>
@@ -37,7 +38,7 @@ function Pricing() {
         {/* headers */}
         {/* lg md sm */}
         <Flex className={style.priceheaderflex} gap="9rem" m="2rem 0">
-          <Box className={style.pricef1}  >
+          <Box className={style.pricef1}>
             <Text className={style.heading3}>Free</Text>
             <Text className={style.heading4}>
               For indivisuals or teams just getting started with time tracking.
@@ -57,13 +58,11 @@ function Pricing() {
                 </li>
               ))}
             </ul>
-            <Button
-              bgColor=""
-            
-              className={style.pbtn}
-            >
-              Select
-            </Button>
+            <Link to="/signup">
+              <Button bgColor="" className={style.pbtn}>
+                Select
+              </Button>
+            </Link>
           </Box>
           <Box className={style.pricef2}>
             <Text className={style.heading3}>Pro</Text>
@@ -94,29 +93,28 @@ function Pricing() {
                 </li>
               ))}
             </ul>
-            <Button bgColor="#3b8fc2" className={style.pbtn2}>
-              14 day free trial
-            </Button>
+            <Link to="/signup">
+              <Button bgColor="#3b8fc2" className={style.pbtn2}>
+                14 day free trial
+              </Button>
+            </Link>
           </Box>
         </Flex>
         {/* Features */}
-       <Features/>
+        <Features />
         {/* FAQ */}
         <FAQ />
-     
+
         {/* readmore */}
         <ReadmoreSection />
-     
 
         {/* having qn */}
         <Box m="10rem 0">
           <HaveQn />
         </Box>
- 
 
         {/* bottom part */}
         <BottomSection />
- 
       </Box>
     </Box>
   );
