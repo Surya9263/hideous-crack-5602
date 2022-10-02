@@ -18,7 +18,7 @@ import { CgToolbox } from "react-icons/cg";
 import { FiHelpCircle } from "react-icons/fi";
 import { FaRegUser } from "react-icons/fa";
 import { MdOutlinePhoneIphone } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Apps from "./Apps";
 import AccountSetting from "./AcountSetting";
@@ -51,6 +51,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
   const [isActive3, setIsActive3] = useState(false);
  
   const dispatch = useDispatch();
+  const navigate =useNavigate()
 
   const [items, setItems] = useState([]);
   useEffect(() => {
@@ -63,6 +64,8 @@ const SidebarContent = ({ onClose, ...rest }) => {
   
   const handleLogout = ()=>{
     dispatch(logout())
+    navigate('/')
+    
   }
 
 

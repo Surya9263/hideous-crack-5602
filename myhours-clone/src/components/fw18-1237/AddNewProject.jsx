@@ -185,7 +185,7 @@ export default function AddNewProject({setData}) {
             name={"billamount"}
             onChange={handleChange}
             type={"number"}
-            placeholder="Enter Hours"
+            placeholder="Enter Amount"
           />
         </Box>
         {/* text */}
