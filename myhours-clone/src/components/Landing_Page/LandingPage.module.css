@@ -1,12 +1,6 @@
-/* @media all and (min-width:480px) and (max-width:720px){
-    div{
-        background-color: red;
-    }
-} */
 
 .parent{
     width:68%;
-    /* border: 1px solid; */
     margin: auto;
     text-align: center;
 }
@@ -43,5 +37,95 @@ text-decoration: none;
 }
 
 .textGradient{
-    background: linear-gradient(to bottom right,#79bf94,transparent);
+  background: linear-gradient(to bottom right,#79bf94,transparent);
+}
+.parentHead{
+    font-size: 70px;
+}
+.parentHead span{
+    font-size: 80px;
+}
+
+.flexClass,.flexClass2,.flexClassReverse{
+    width: 80%;
+    margin: auto;
+}
+
+.flexBox1{
+width: 30%;
+}
+
+.flexBox2{
+    width: 60%;
+}
+
+.flexBox3{
+    width: 60%;
+}
+.flexBox4{
+    width: 30%;
+}
+
+.flexBox5{
+    width: 25%;
+    margin: auto;
+}
+.flexClass3{
+    width: 34%;
+}
+
+.flexBox6{
+    width: 45%;
+  }
+  .flexBox7{
+    width: 35%;
+  }
+
+  .flexClass4{
+    width: 100%;
+  }
+
+@media only screen and (max-width: 760px) {
+    .parentHead{
+        font-size:50px ;
+    }
+    .parent{
+        width: 90%;
+    }
+    .parentHead span{
+        font-size: 60px;
+    }
+    .flexClass{
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    .flexClass2{
+        flex-wrap: wrap;
+        margin: auto;
+    }
+    .flexBox1,.flexBox2,.flexBox3,.flexBox4{
+        width: 95%;
+        }
+        .flexClass4{
+            flex-wrap: wrap;
+        }
+        .flexBox6{
+            width: 95%;
+          }
+          .flexBox7{
+            width: 95%;
+          }
+     .flexClassReverse{
+        flex-wrap: wrap-reverse;
+        margin: auto;
+     } 
+  }
+
+  @media only screen and (max-width: 500px){
+    .flexBox5{
+        width: 90%;
+    }
+    .flexClass3{
+        width: 90%;
+    }
   }
