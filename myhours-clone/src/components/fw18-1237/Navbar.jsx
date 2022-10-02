@@ -77,27 +77,27 @@ export default function Navbar() {
       style={{transform:active? "translateY(0%)":"translateY(-100%)"}}
       className={styles.dropdown}>
         <p className={styles.para}>
-          <Link to="how-it-works">How it works</Link>
+          <Link onClick={()=>setActive(!active)} to="how-it-works">How it works</Link>
         </p>
 
         <p className={styles.para}>
-          <Link to="use-cases">Use cases</Link>
+          <Link onClick={()=>setActive(!active)} to="use-cases">Use cases</Link>
         </p>
 
         <p className={styles.para}>
-          <Link to="pricing" >Pricing</Link>
+          <Link onClick={()=>setActive(!active)} to="pricing" >Pricing</Link>
         </p>
 
         <p className={styles.para} >
-          <Link to="support">Support</Link>
+          <Link onClick={()=>setActive(!active)} to="support">Support</Link>
         </p>
 
         <p className={styles.para}>
-          <Link to="login">Sign in</Link>
+          <Link onClick={()=>setActive(!active)} to="login">Sign in</Link>
         </p>
 
         <p className={styles.buttonpara}>
-          <Link to="signup">
+          <Link onClick={()=>setActive(!active)} to="signup">
             <button className={styles.btndropdown}>Get My Hours Free</button>
           </Link>
         </p>
