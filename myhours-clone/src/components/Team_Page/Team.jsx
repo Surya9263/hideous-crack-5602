@@ -2,11 +2,33 @@ import { Box, Button, Flex, Input, Menu, MenuButton, MenuItem, MenuList, Table, 
 import React from 'react'
 import { BiArchive } from "react-icons/bi";
 import { CgExport } from "react-icons/cg";
-import { BsArrowUp } from "react-icons/bs";
+import { BsArrowDown, BsArrowUp } from "react-icons/bs";
+import { Navigate, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Team = () => {
     
     const data=JSON.parse(localStorage.getItem("Team")) || [];
+
+    const navigate=useNavigate();
+
+    const addNewClient=()=>{
+        navigate("new");
+    }
+
+    const [sortName,setSortName]=useState(false);
+
+    const sortByName=()=>{
+      setSortName(!sortName);
+        if(sortName){
+      let orderAsc = data.sort((a, b)=> a.name.localeCompare(b.name));
+      localStorage.setItem("Team", JSON.stringify(orderAsc));
+        }else{
+      let orderDes = data.sort((a, b)=> b.name.localeCompare(a.name));
+      localStorage.setItem("Team", JSON.stringify(orderDes));
+        }
+    }
+
   return (
 <>
     <Flex w="80%" alignItems="center" justifyContent="space-between">
@@ -14,7 +36,7 @@ const Team = () => {
             <Text fontSize="4xl" fontWeight="semibold">Team Members</Text>
         </Box>
         <Box>
-        <Button fontSize="16px" colorScheme='telegram'>+ New Team member</Button>
+        <Button onClick={addNewClient} fontSize="16px" colorScheme='telegram'>+ New Team member</Button>
         </Box>
     </Flex>
     <Flex justifyContent="space-between" w="80%" my="20px">
@@ -47,7 +69,7 @@ const Team = () => {
   <Table variant='simple' w="80%">
     <Thead>
       <Tr>
-        <Th><Button color="rgb(102,102,102)" backgroundColor="transparent" size="sm" gap="5px">NAME<BsArrowUp/></Button></Th>
+        <Th><Button onClick={sortByName} color="rgb(102,102,102)" backgroundColor="transparent" size="sm" gap="5px">NAME{sortName?<BsArrowDown/>:<BsArrowUp/>}</Button></Th>
         <Th><Button color="rgb(102,102,102)" backgroundColor="transparent" size="sm">ACTIVITY</Button></Th>
         <Th><Button color="rgb(102,102,102)" backgroundColor="transparent" size="sm">EMAIL</Button></Th>
         <Th><Button color="rgb(102,102,102)" backgroundColor="transparent" size="sm">LABOR RATE</Button></Th>
