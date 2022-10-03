@@ -6,11 +6,11 @@ This collaborative project is a clone of the [MyHours](https://myhours.com) webs
 
 ## Deployed Site
 
-[My Hours clone](link to be add)
+[My Hours clone](https://myhour.vercel.app/)
 
 ## Presentation Video
 
-[Presentation](presentation link)
+[Presentation](https://drive.google.com/file/d/1xeAxnoyrbHP_Ie3he3tu9YvY231YtAmm/view?usp=sharing)
 
 ## Features
 
@@ -20,7 +20,7 @@ This collaborative project is a clone of the [MyHours](https://myhours.com) webs
 
 ## Tech Stack
 
-- HTML | CSS | JavaScript | React 
+- HTML | CSS | JavaScript | React | Redux | Node.js | MongoDB | Express.js
 
 ### Libraries Used
 
@@ -28,7 +28,7 @@ This collaborative project is a clone of the [MyHours](https://myhours.com) webs
 
 ## Contributors
 
-- [@SURYA SRIVASTAV](GITHUBLINK)
+- [@SURYA SRIVASTAV](https://github.com/Surya9263)
 - [@PUSHPRAJ PATEL](https://github.com/pushpraj15295)
 - [@SHRIDHAR R HAKKE](https://github.com/Shridhar1998)
 - [@UTKARSH GUPTA](https://github.com/utkarshqw)
@@ -68,6 +68,31 @@ This collaborative project is a clone of the [MyHours](https://myhours.com) webs
 
   - **SignIn**
     ![SignIn](./Website%20sneak%20peeks/SignIn.png?raw=true)
+
+- **Track Page**
+
+  ![Track](./Website%20sneak%20peeks/Track.png)
+
+  - **Client**
+    ![Client](./Website%20sneak%20peeks/Client.png)
+
+  - **Clint Form**
+    ![Client Form](./Website%20sneak%20peeks/ClientForm.png)
+
+  - **Team Members**
+    ![Team Members](./Website%20sneak%20peeks/TeamMembers.png)
+
+  - **Project**
+    ![Project](./Website%20sneak%20peeks/project.png)
+
+  - **Project Form**
+    ![Project Form](./Website%20sneak%20peeks/projectform.png)
+
+  - **Help**
+    ![Help ](./Website%20sneak%20peeks/helps.png)
+
+  - **WhatsNew**
+    ![WhatsNew ](./Website%20sneak%20peeks/whatnew.png)
 
 - **Footer**
 
