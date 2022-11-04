@@ -10,6 +10,9 @@ import UseCasePage from '../components/useCasePage/UseCasePage'
 import HowItWorks from '../pages/HowItWorks'
 import Pricing from '../components/Pricing_page/Pricing'
 import Support from '../components/fw18-1237/Support'
+
+// feedback - fw17_0915, fw19_0963 - you can create navigation bar can be much better approach
+
 const AllRoutes = () => {
   return (
     <div>
