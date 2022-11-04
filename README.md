@@ -28,7 +28,7 @@ This collaborative project is a clone of the [MyHours](https://myhours.com) webs
 
 ## Contributors
 
-- [@SURYA SRIVASTAV](https://github.com/Surya9263)
+- [@SURYA SRIVASTAVA](https://github.com/Surya9263)
 - [@PUSHPRAJ PATEL](https://github.com/pushpraj15295)
 - [@SHRIDHAR R HAKKE](https://github.com/Shridhar1998)
 - [@UTKARSH GUPTA](https://github.com/utkarshqw)
