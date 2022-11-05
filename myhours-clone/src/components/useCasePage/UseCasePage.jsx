@@ -2,6 +2,7 @@ import { Box, Button, Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 import style from "../Landing_Page/LandingPage.module.css"
 
+// feedback: fw17_0915 and fw19_0963 - How can we divide big components into smaller one that can be easily structured and organised with lesser code
 const UseCasePage = () => {
   return (
     <>
