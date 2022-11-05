@@ -15,6 +15,7 @@ const ClientData = ({newData}) => {
 	const [sortStatus, setSortStatus] = useState(false);
 	const navigate = useNavigate();
 	
+	// feedback: fw17_0078 - you can move this to utility function
 	const sortByName=()=>{
 		setSortName(!sortName);
 	    if(sortName){
