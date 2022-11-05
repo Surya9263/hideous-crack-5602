@@ -36,7 +36,7 @@ export default function Navbar() {
         <div>
           <Link to="/"> <img className={styles.img1} src="myhourslogo.png" alt="#" /></Link>
         </div>
-
+{/* feedback: fw18_1237 and fw18_1057 - use loops to render such list or think of how to reduce this code. */}
         <ul className={styles.ul1}>
           <li className={styles.uli} >
             <Link to="how-it-works">How it works</Link>
