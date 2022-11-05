@@ -10,6 +10,7 @@ const AccountSetting = () => {
         <Box width="70%" margin="auto">
           <Text fontSize="40px">Account admin </Text>
           <br />
+    {/* feedback: fw17_0915 - you have multiple flex with almost same configuration, can we reduce it to one? make a wrapper arount it and pass dynamic config to it*/}
           <Flex alignItems="center">
             <CgPlug /> &nbsp;&nbsp;&nbsp;&nbsp;
             <a href="https://app.myhours.com/?&_ga=2.170535328.1847263091.1664255522-1335593282.1664255522#/apps" target="_blank">
