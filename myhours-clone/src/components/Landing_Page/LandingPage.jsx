@@ -4,6 +4,7 @@
 //     howItWorks,useCases
 // }
 
+// feedback: fw17_0915, fw18_1057, fw19_0963 - code formatting is not proper
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import React from 'react'
 import {Link} from "react-router-dom"
@@ -37,6 +38,7 @@ const LandingPage = () => {
                     <img src="https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/600008d9487a040f81a5d142_MS-Gold.png" alt="" />
                 </Box>
             </Flex>
+{/* feedback: fw17_0915, fw18_1057, fw19_0963 - can we optimise such code? Where we have almost similar elements added to the view.*/}
             <Flex mt="80px" mb="180px" justifyContent="center" alignItems="center" gap="120px">
                 <Box>
                     <img style={{width:"100px"}} src="https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/6000079c0b6e21682628f281_typefox%201.png" alt="" />
