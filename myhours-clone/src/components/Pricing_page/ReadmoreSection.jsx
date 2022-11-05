@@ -21,6 +21,7 @@ function ReadmoreSection() {
         m="auto"
         mb="2rem"
       >
+          {/* feedback: fw18_1057 - class name should be more generic */}
         <Box className={style.kelvin}>- Kevin from St. Petersburg, FL, USA</Box>
         <a to href="#">
           <Box className={style.link} display="flex">
