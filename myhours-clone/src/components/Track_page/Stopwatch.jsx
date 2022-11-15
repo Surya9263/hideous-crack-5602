@@ -36,6 +36,7 @@ export const Stopwatch = () => {
           {start ? 'Start New' : 'Start'}
         </Button>
         <Text>
+            {/* feedback: fw18_1057 - use numeric constant file here*/}
           <span>{('0' + Math.floor((time / 6000) % 60)).slice(-2)}:</span>
           <span>{('0' + Math.floor((time / 600) % 60)).slice(-2)}:</span>
           <span>{('0' + ((time / 10) % 60)).slice(-2)}</span>

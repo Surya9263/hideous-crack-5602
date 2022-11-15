@@ -31,7 +31,7 @@ export default function Support() {
     <div className={supty.supparent}>
 
 
-
+  {/*feeback: fw18_1237 - move static content to constant files or JSON files*/}
     <div className={supty.suheading}>We're here</div>
     <div className={supty.susubheading}>We typically respond in less than 24 hours on business days. Contact us via email, live chat or the form below.</div>
     <div className={supty.sulastheading}><span ><a href=""> Read our help guides</a></span> or send us a message to get detailed help.</div>
@@ -53,7 +53,7 @@ export default function Support() {
 
       <div className={supty.uform}>
         <div className={supty.susubheading} >What do you need help with?</div>
-
+{/*feedback: fw18_1237 - you can loop this select easily check feedback comment how to do it in react?*/}
         <form onSubmit={handlesubmit} action="">
             <select name="" id="">
                 <option value="">I have a question before signing up...</option>

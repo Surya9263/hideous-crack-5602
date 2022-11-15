@@ -7,6 +7,7 @@ import Supports from '../components/how-it-works/Supports';
 import { Link } from 'react-router-dom';
 import { BsCheck } from 'react-icons/bs';
 
+// feedback: fw17_0078 and fw18_1057 - take them to constant files or JSON files
 const featuresData = [
 	{
 		title: "Organize your work with projects and tasks",
@@ -122,9 +123,11 @@ const HowItWorks = () => {
 
     <Box margin='auto' textAlign={'center'} mt={40} mb={40} >
 	<Heading color={'rgb(54,92,117)'}>Have questions? We're here</Heading>
+	{/* feedback: fw17_0078 and fw18_1057 - replace in-line text with constant, it makes view more readable and maintained. */}
 	<Text width={['95%','62%']} margin='auto' fontSize='20px' mt={10}>It's always nice to have someone to talk to when facing new software. Get in touch and we'll try our best to help you out.</Text>
 
 	<Flex gap={6} justifyContent='center' direction={['column','column', 'row']} mt={6}>
+        {/* feedback: fw17_0078 and fw18_1057 - use loop for links, they seem similar except the text passed to them */}
 	<Link to="#">
 	      <Flex alignItems='center' color={'rgb(59,142,195)'} justifyContent='center'>
 		<BsCheck fontSize={'30px'}/>

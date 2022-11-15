@@ -14,6 +14,7 @@ import Help from '../pages/AuthorizedPage/Help'
 import UserCreds from '../pages/AuthorizedPage/UserCreds'
 import WhatNew from '../pages/AuthorizedPage/WhatNew'
 
+// feedback: fw17_0915 and fw19_0963 - You can organise routes in different modules or sub-modules, it will make the structure better
 const AllInnerRoutes = () => {
   return (
     <Routes>

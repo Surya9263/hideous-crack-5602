@@ -163,6 +163,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
               className={styles.btn}
               onClick={() => setIsActive1(!isActive1)}
             >
+              {/* feedback: fw17_0915 and fw18_1057 - try to optimise how to give multiple spaces*/}
               <GoGraph />
               Reports
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

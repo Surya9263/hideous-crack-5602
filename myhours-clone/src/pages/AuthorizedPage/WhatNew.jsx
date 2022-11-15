@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
+// feedback: fw17_0078 - Divide big components in smaller one to make sure you don’t write extra code
 const WhatNew = () => {
   return (
     <>
