@@ -1,186 +1,151 @@
-/* background-color: #3b8fc2 of buttton */
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-
-
-.btn{
-    
-    border-radius: 5px;
-    background-color: #3b8fc2;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: .5px;
-    padding: 10px 20px;
-   
+.btn {
+  border-radius: 5px;
+  background-color: #3b8fc2;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 10px 20px;
 }
 
-.nav1{
-    /* border: 1px solid red; */
-    position: fixed;
-    top: 0px;
-    z-index: 3;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    width: 100%;
-    padding-left: 60px;
-    padding-right: 60px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+.nav1 {
+  position: fixed;
+  top: 0px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  padding-left: 60px;
+  padding-right: 60px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
 
-.dummy{
-    height: 80px;
+.dummy {
+  height: 80px;
 }
 
-.img1{
-    height: 35px;
+.img1 {
+  height: 35px;
 }
 
-.ul1{
-    display: flex;
-    gap: 45px;
-    align-items: center;
-
+.ul1 {
+  display: flex;
+  gap: 45px;
+  align-items: center;
 }
 
-.uli{
-    list-style: none;
-    color: #3b8fc2 ;
-    font-size: 18px;
-    font-weight: 500;
-    
+.uli {
+  list-style: none;
+  color: #3b8fc2;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .burger {
-    display: none;
-    cursor: pointer;
+  display: none;
+  cursor: pointer;
 }
-.burger>div{
-
-    width: 20px;
-    height: 3px;
-    background-color: gray;
-    margin: 3px;
-    
-
+.burger > div {
+  width: 20px;
+  height: 3px;
+  background-color: gray;
+  margin: 3px;
 }
 
-.dropdown{
-    /* display:none; */
-
-    position: fixed;
-    top: 80px;
-    width: 100%;
-    z-index: 2;
-    padding-top: 35px;
-    padding-left: 60px;
-    padding-right: 60px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
-    /* transition: .6s ease-out; */
-    transition: 1s ease-out ;
-    
-
+.dropdown {
+  position: fixed;
+  top: 80px;
+  width: 100%;
+  z-index: 2;
+  padding-top: 35px;
+  padding-left: 60px;
+  padding-right: 60px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  transition: 1s ease-out;
 }
 
-.para{
-    color: #3b8fc2 ;
-    font-size: 18px;
-    font-weight: 500;
-    
-    margin-bottom:30px;
+.para {
+  color: #3b8fc2;
+  font-size: 18px;
+  font-weight: 500;
 
+  margin-bottom: 30px;
 }
 
-.btndropdown{
-    
-    
-    border-radius: 5px;
-    background-color: #3b8fc2;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: .5px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-   
+.btndropdown {
+  border-radius: 5px;
+  background-color: #3b8fc2;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
 }
 
-.buttonpara{
-
-    /* border:1px solid red; */
-    width:203.5px;
-    margin: auto;
+.buttonpara {
+  width: 203.5px;
+  margin: auto;
 }
 
+@media screen and (max-width: 1250px) {
+  .nav1 {
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .img1 {
+    margin-right: 40px;
+  }
 
-@media screen and (max-width:1250px) {
-    .nav1{
-        justify-content: center;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    .img1{
-        margin-right: 40px;
-    }
-
-    .ul1 {
-        gap:30px
-    }
-    
+  .ul1 {
+    gap: 30px;
+  }
 }
 
-@media screen and (max-width:970px){
-.dropdown{
-    /* display: block; */
-} 
-.nav1{
+@media screen and (max-width: 970px) {
+  .nav1 {
     padding-left: 60px;
     padding-right: 60px;
     justify-content: space-between;
-}    
-.ul1{
+  }
+  .ul1 {
     display: none;
-}
+  }
 
-.burger{
+  .burger {
     display: block;
+  }
 }
 
-}
-   
-@media screen and (max-width:470px){
+@media screen and (max-width: 470px) {
+  .nav1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
-    .nav1{
-        padding-left: 20px;
-        padding-right:20px;
-    }
+  .buttonpara {
+    width: 100%;
+  }
 
-    .buttonpara{
+  .btndropdown {
+    width: 100%;
+  }
 
-    
-        width:100%
-        
-    }
-
-    .btndropdown{
-
-        width: 100%;
-    }
-
-    .dropdown{
-
-        padding-left: 20px;
-        padding-right: 20px;
-
-    }
-
+  .dropdown {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
