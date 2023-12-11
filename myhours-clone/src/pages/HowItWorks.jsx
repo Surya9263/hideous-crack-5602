@@ -8,11 +8,11 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import ReactPlayer from "react-player";
-import Features from "../components/how-it-works/Features";
-import Steps from "../components/how-it-works/Steps";
-import Supports from "../components/how-it-works/Supports";
 import { Link } from "react-router-dom";
 import { BsCheck } from "react-icons/bs";
+import Steps from "../components/how-it-works/Steps";
+import Supports from "../components/how-it-works/Supports";
+import Features from "../components/how-it-works/Features";
 import { SupportData, featuresData, stepsData } from "../utils";
 
 const HowItWorks = () => {
@@ -20,13 +20,13 @@ const HowItWorks = () => {
   return (
     <>
       <Flex
-        textAlign={"center"}
-        alignItems="center"
         width="85%"
         margin={"auto"}
+        direction="column"
+        alignItems="center"
+        textAlign={"center"}
         mt={isNotSmallerScreen ? "20" : "8"}
         gap={isNotSmallerScreen ? "8" : "5"}
-        direction="column"
       >
         <Text fontSize={isNotSmallerScreen ? "6xl" : "4xl"}>How it works</Text>
         <Heading
@@ -67,17 +67,17 @@ const HowItWorks = () => {
         </Box>
       </Flex>
       <Box width={["100%", "75%"]} margin="auto">
-        {featuresData.map((feature,index) => (
-          <Features {...feature} key={index}/>
+        {featuresData.map((feature, index) => (
+          <Features {...feature} key={index} />
         ))}
       </Box>
       <Box>
-        {stepsData.map((steps,index) => (
-          <Steps {...steps} key={index}/>
+        {stepsData.map((steps, index) => (
+          <Steps {...steps} key={index} />
         ))}
       </Box>
       <Flex p={[8, 14]} gap={24} direction={["column", "row"]} mt={10}>
-        {SupportData.map((support,index) => (
+        {SupportData.map((support, index) => (
           <Supports {...support} key={index} />
         ))}
       </Flex>

@@ -1,32 +1,29 @@
 import {
-  Flex,
   Box,
-  FormControl,
-  FormLabel,
-  Input,
-  Checkbox,
-  Stack,
-  Link,
-  Button,
-  Heading,
   Text,
-  useColorModeValue,
+  Flex,
+  Link,
+  Stack,
   Image,
+  Input,
+  Button,
+  Checkbox,
+  FormLabel,
+  FormControl,
+  useColorModeValue,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../Store/auth/auth.actions";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Login() {
   const [creds, setCreds] = useState({});
-
   const token = useSelector((state) => state.auth.token);
-
-  console.log("token id ", token);
+  const [isNotSmallerScreen] = useMediaQuery("(min-width:800px)");
 
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   const onSubmit = (e) => {
@@ -43,11 +40,11 @@ export default function Login() {
     });
   };
 
-  useEffect(()=>{
-    if(token){
+  useEffect(() => {
+    if (token) {
       localStorage.setItem("Mycred", JSON.stringify(creds));
-      // navigate("/home")
-    } })
+    }
+  });
 
   return (
     <Flex
@@ -57,25 +54,29 @@ export default function Login() {
       backgroundColor="white"
     >
       <Stack
-        spacing={8}
-        mx={"auto"}
+        spacing={isNotSmallerScreen ? "5" : "0"}
+        mx={isNotSmallerScreen ? "auto" : "0"}
         maxW={"lg"}
-        py={12}
-        px={16}
+        py={isNotSmallerScreen ? "12" : "0"}
+        px={isNotSmallerScreen ? "15" : "0"}
         boxShadow="rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"
-        margin="20"
+        margin={isNotSmallerScreen ? "18" : "0"}
       >
-        <Stack align={"center"}>
-          {/* <Heading fontSize={'4xl'}>Sign in to your account</Heading> */}
+        <Stack>
           <Image
             w="170px"
+            m="auto"
             src="https://allhoursproductb0b1.blob.core.windows.net/static-files/myhours_logo_icon.svg"
             alt="Dan Abramov"
           />
         </Stack>
-        <Box float="left">
-          {" "}
-          <Text fontSize="30px" fontWeight="bold" color={"gray.600"}>
+        <Box>
+          <Text
+            textAlign="center"
+            fontSize="30px"
+            fontWeight="bold"
+            color={"gray.600"}
+          >
             Sign in
           </Text>
         </Box>
@@ -101,7 +102,12 @@ export default function Login() {
                 justify={"space-between"}
               >
                 <Checkbox>Remember me</Checkbox>
-                <Link color={"blue.400"}>Forgot password?</Link>
+                <Link
+                  fontSize={!isNotSmallerScreen && "14px"}
+                  color={"blue.400"}
+                >
+                  Forgot password?
+                </Link>
               </Stack>
               <Button
                 bg={"blue.400"}
