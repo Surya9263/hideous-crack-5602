@@ -1,14 +1,14 @@
 import React from "react";
-import style from "./LandingPage.module.css";
 import {
   Box,
-  Button,
   Flex,
-  SimpleGrid,
   Text,
+  Button,
+  SimpleGrid,
   useMediaQuery,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import style from "./LandingPage.module.css";
 import { landingImageData } from "../../utils";
 
 const LandingPage = () => {
@@ -33,10 +33,10 @@ const LandingPage = () => {
           </span>
         </p>
       </Box>
-      <Box textAlign="center" mt="20">
+      <Box textAlign="center" mt={isNotSmallerScreen ? "20" : "10"}>
         <Link to="login">
           <Button
-            p="8"
+            p={isNotSmallerScreen ? "8" : "6"}
             colorScheme="telegram"
             backgroundColor="#3b8fc2"
             color="white"

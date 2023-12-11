@@ -1,91 +1,81 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.uparent{
-    color: #DBF1FF;
-    background-color: #375D75;
-    padding-top:30px;
-    padding-bottom:20px
-    
+.uparent {
+  color: #dbf1ff;
+  background-color: #375d75;
+  padding-top: 30px;
+  padding-bottom: 20px;
 }
-
-.ufooterlogo{
-    height: 80px;
-    margin-bottom: 3px;
+.ufooterlogo {
+  height: 80px;
+  margin-bottom: 3px;
 }
-
-.ugridcontainer{
-
-    /* border: 1px solid red; */
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    column-gap: 10px;
-    width: 85%;
-    margin: auto;
-    
-
+.ugridcontainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 10px;
+  width: 85%;
+  margin: auto;
 }
 
-/* .ugridcontainer > div{
-    /* border: 1px solid green; 
-} */
-
-.unul{
-    list-style: none;
+.unul {
+  list-style: none;
 }
 
-.unul > li{
-    margin-bottom: 20px;
+.unul > li {
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.unheading {
+  font-size: 17.6px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.ubottomfooter {
+  text-align: center;
+  font-size: 22px;
+}
+.ubottomfooterspan {
+  text-decoration: underline;
+  font-weight: 700;
+  margin-left: 10px;
+}
+.ubottomfooterspan:hover {
+  text-decoration: none;
+}
+.ulogopara {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 800px) {
+  .uparent {
+    padding-left: 30px;
+  }
+  .ugridcontainer {
+    width: 95%;
+  }
+  .unul > li {
+    margin-bottom: 15px;
     font-weight: 400;
+  }
 }
 
-.unheading{
-    font-size: 17.6px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
+@media screen and (max-width: 767px) {
+  .ugridcontainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-.ubottomfooter{
-    /* border: 1px solid red; */
-    
-    text-align: center;
-    font-size: 22px;
-}
-
-.ubottomfooterspan{
-    text-decoration: underline;
-    font-weight: 700;
-    margin-left:10px;
-    
-}
-
-.ubottomfooterspan:hover{
-    text-decoration: none;
-}
-
-.ulogopara{
-    font-size: 15px;
-    
-}
-
-@media screen and (max-width:800px) {
-    
-    .ugridcontainer{
-        width: 95%;
-    } 
-
-}
-
-@media screen and (max-width:767px) {
-
-    .ugridcontainer{
-        grid-template-columns: repeat(1,1fr);
-    }
-
-   .ubottomfooter{
+  .ubottomfooter {
+    font-size: 20px;
+    color: floralwhite;
     width: 85%;
-    text-align:left;
-   }
+    text-align: left;
+  }
+  .unul > li {
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
 }

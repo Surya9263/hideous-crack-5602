@@ -5,7 +5,6 @@ import styles from "./Navbar.module.css";
 export default function Navbar() {
   const [active, setActive] = useState(false);
   const [size, setsize] = useState(window.innerWidth);
-  const [screen, setscreen] = useState(window.innerHeight);
 
   const checksize = () => {
     setsize(window.innerWidth);
@@ -30,7 +29,7 @@ export default function Navbar() {
             <img className={styles.img1} src="myhourslogo.png" alt="#" />
           </Link>
         </div>
-        {/* feedback: fw18_1237 and fw18_1057 - use loops to render such list or think of how to reduce this code. */}
+
         <ul className={styles.ul1}>
           <li className={styles.uli}>
             <Link to="how-it-works">How it works</Link>

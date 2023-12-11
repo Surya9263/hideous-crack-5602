@@ -7,6 +7,7 @@ export default function Footer() {
       <div className={fstyles.ugridcontainer}>
         <div>
           <img className={fstyles.ufooterlogo} src="footerlogo.png" alt="" />
+          <br />
           <p className={fstyles.ulogopara} > All rights reserved. </p>
           <p className={fstyles.ulogopara} >© 2022 My Hours.</p>
         </div>
