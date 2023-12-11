@@ -1,43 +1,39 @@
-import React from "react";
-import style from "./Pricing.module.css";
-import {
-  Box,
-  Heading,
-  Container,
-  Text,
-  SimpleGrid,
-  Button,
-  TableContainer,
-  Table,
-  Thead,
-  Tr,
-  Th,
-  Tbody,
-  Td,
-  Flex,
-} from "@chakra-ui/react";
-import { fdata, FreeList, ProList } from "./PricingDatabase";
 import FAQ from "./FAQ";
-import ReadmoreSection from "./ReadmoreSection";
+import React from "react";
 import HaveQn from "./HaveQn";
-import BottomSection from "./BottomSection";
 import Features from "./Features";
 import { Link } from "react-router-dom";
+import style from "./Pricing.module.css";
+import BottomSection from "./BottomSection";
+import ReadmoreSection from "./ReadmoreSection";
+import { FreeList, ProList } from "./PricingDatabase";
+import {
+  Box,
+  Text,
+  Flex,
+  Button,
+  Heading,
+  SimpleGrid,
+  useMediaQuery,
+} from "@chakra-ui/react";
 
 function Pricing() {
+  const [isNotSmallerScreen] = useMediaQuery("(min-width:800px)");
   return (
-    <Box width="80%" style={{ margin: "auto" }}>
+    <Box width={isNotSmallerScreen ? "80%" : "95%"} style={{ margin: "auto" }}>
       <Box>
-        {/* headers */}
         <Box>
           <Text className={style.heading1}>Pick your plan</Text>
           <Heading className={style.heading2}>
             Track time on projects with your team.
           </Heading>
         </Box>
-        {/* headers */}
-        {/* lg md sm */}
-        <Flex className={style.priceheaderflex} gap="9rem" m="2rem 0">
+
+        <Flex
+          className={style.priceheaderflex}
+          gap={isNotSmallerScreen ? "9rem" : "4rem"}
+          my={isNotSmallerScreen ? "2rem" : ".1rem"}
+        >
           <Box className={style.pricef1}>
             <Text className={style.heading3}>Free</Text>
             <Text className={style.heading4}>
@@ -49,11 +45,9 @@ function Pricing() {
             </Text>
 
             <br />
-            {/* <br /> */}
-
             <ul className={style.ul}>
-              {FreeList.map((e, i) => (
-                <li className={style.list} key={i}>
+              {FreeList.map((e, index) => (
+                <li className={style.list} key={index}>
                   {e}
                 </li>
               ))}
@@ -76,7 +70,11 @@ function Pricing() {
                   $<span className={style.dollar2}>6</span>
                 </Text>
               </Box>
-              <Box style={{ fontWeight: "600", color: "GrayText" }}>
+              <Box
+                fontWeight="600"
+                color="GrayText"
+                fontSize={!isNotSmallerScreen && "12px"}
+              >
                 <p>
                   <i>- per active team member, per month billed annually</i>
                 </p>
@@ -100,20 +98,15 @@ function Pricing() {
             </Link>
           </Box>
         </Flex>
-        {/* Features */}
+
         <Features />
-        {/* FAQ */}
+
         <FAQ />
 
-        {/* readmore */}
         <ReadmoreSection />
 
-        {/* having qn */}
-        <Box m="10rem 0">
-          <HaveQn />
-        </Box>
+        <HaveQn />
 
-        {/* bottom part */}
         <BottomSection />
       </Box>
     </Box>
