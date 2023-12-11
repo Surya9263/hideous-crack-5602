@@ -1,17 +1,15 @@
 import React from 'react'
-import {Routes,Route} from "react-router-dom"
-import LandingPage from '../components/Landing_Page/LandingPage'
-import Login from '../pages/AuthPages/SignIn'
-import Success from '../pages/AuthPages/Success'
 import Terms from '../pages/AuthPages/Terms'
-import Signup from '../pages/AuthPages/SignUp'
-
-import UseCasePage from '../components/useCasePage/UseCasePage'
 import HowItWorks from '../pages/HowItWorks'
-import Pricing from '../components/Pricing_page/Pricing'
+import Login from '../pages/AuthPages/SignIn'
+import {Routes,Route} from "react-router-dom"
+import Signup from '../pages/AuthPages/SignUp'
+import Success from '../pages/AuthPages/Success'
 import Support from '../components/fw18-1237/Support'
+import Pricing from '../components/Pricing_page/Pricing'
+import UseCasePage from '../components/useCasePage/UseCasePage'
+import LandingPage from '../components/Landing_Page/LandingPage'
 
-// feedback - fw17_0915, fw19_0963 - you can create navigation bar can be much better approach
 
 const AllRoutes = () => {
   return (

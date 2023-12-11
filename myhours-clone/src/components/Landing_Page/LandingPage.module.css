@@ -1,131 +1,188 @@
+.parent {
+  width: 68%;
+  margin: auto;
+  text-align: center;
+}
+.parent_paragraph {
+  font-family: Avenir Next;
+  font-size: 28px;
+  color: rgb(55, 93, 117);
+}
+.parent_span{
+    font-weight: bolder;
+}
 
-.parent{
-    width:68%;
+.getStartedbtn {
+  background-color: #3b8fc2;
+  border: none;
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.linkToWorking {
+  color: rgb(59, 143, 194);
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.linkToWorking:hover {
+  text-decoration: none;
+}
+
+.anchorTagsHover {
+  text-decoration: underline;
+}
+.anchorTagsHover:hover {
+  text-decoration: none;
+}
+
+.talkToTeamBtn {
+  border: 2px solid rgb(55, 93, 117);
+}
+
+.textGradient {
+  background: linear-gradient(to bottom right, #79bf94, transparent);
+}
+.parentHead {
+  font-size: 70px;
+}
+.parentHead span {
+  font-size: 80px;
+}
+
+.flexClass,
+.flexClass2,
+.flexClassReverse {
+  width: 80%;
+  margin: auto;
+}
+
+.flexBox1 {
+  width: 30%;
+}
+
+.flexBox2 {
+  width: 60%;
+}
+
+.flexBox3 {
+  width: 60%;
+}
+.flexBox4 {
+  width: 30%;
+}
+
+.flexBox5 {
+  width: 25%;
+  margin: auto;
+}
+.flexClass3 {
+  width: 34%;
+}
+
+.flexBox6 {
+  width: 45%;
+}
+.flexBox7 {
+  width: 35%;
+}
+
+.flexClass4 {
+  width: 100%;
+}
+
+@media only screen and (max-width: 960px) {
+  .parentHead {
+    font-size: 55px;
+  }
+  .parent {
+    width: 90%;
+  }
+  .parentHead span {
+    font-size: 45px;
+  }
+  .flexClass {
+    flex-wrap: wrap;
     margin: auto;
-    text-align: center;
-}
-
-.getStartedbtn{
-    background-color: #3b8fc2;
-    border: none;
-    font-size: 20px;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.linkToWorking{
-    color:rgb(59, 143, 194);
-    font-size: 24px;
+  }
+  .flexClass2 {
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .flexBox1,
+  .flexBox2,
+  .flexBox3,
+  .flexBox4 {
+    width: 95%;
+  }
+  .flexClass4 {
+    flex-wrap: wrap;
+  }
+  .flexBox6 {
+    width: 95%;
+  }
+  .flexBox7 {
+    width: 95%;
+  }
+  .flexClassReverse {
+    flex-wrap: wrap-reverse;
+    margin: auto;
+  }
+  .linkToWorking {
+    font-size: 18px;
     font-weight: 600;
     text-decoration: underline;
-}
-
-.linkToWorking:hover{
-text-decoration: none;
-}
-
-.anchorTagsHover{
-    text-decoration: underline;
-}
-.anchorTagsHover:hover{
-    text-decoration: none;
-}
-
-.talkToTeamBtn{
-    border: 2px solid rgb(55, 93, 117);
-}
-
-.textGradient{
-  background: linear-gradient(to bottom right,#79bf94,transparent);
-}
-.parentHead{
-    font-size: 70px;
-}
-.parentHead span{
-    font-size: 80px;
-}
-
-.flexClass,.flexClass2,.flexClassReverse{
-    width: 80%;
-    margin: auto;
-}
-
-.flexBox1{
-width: 30%;
-}
-
-.flexBox2{
-    width: 60%;
-}
-
-.flexBox3{
-    width: 60%;
-}
-.flexBox4{
-    width: 30%;
-}
-
-.flexBox5{
-    width: 25%;
-    margin: auto;
-}
-.flexClass3{
-    width: 34%;
-}
-
-.flexBox6{
-    width: 45%;
+    
   }
-  .flexBox7{
-    width: 35%;
-  }
-
-  .flexClass4{
-    width: 100%;
-  }
+}
 
 @media only screen and (max-width: 760px) {
-    .parentHead{
-        font-size:50px ;
-    }
-    .parent{
-        width: 90%;
-    }
-    .parentHead span{
-        font-size: 60px;
-    }
-    .flexClass{
-        flex-wrap: wrap;
-        margin: auto;
-    }
-    .flexClass2{
-        flex-wrap: wrap;
-        margin: auto;
-    }
-    .flexBox1,.flexBox2,.flexBox3,.flexBox4{
-        width: 95%;
-        }
-        .flexClass4{
-            flex-wrap: wrap;
-        }
-        .flexBox6{
-            width: 95%;
-          }
-          .flexBox7{
-            width: 95%;
-          }
-     .flexClassReverse{
-        flex-wrap: wrap-reverse;
-        margin: auto;
-     } 
+  .parentHead {
+    font-size: 30px;
   }
+  .parent {
+    width: 90%;
+  }
+  .parentHead span {
+    font-size: 35px;
+  }
+  .flexClass {
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .flexClass2 {
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .flexBox1,
+  .flexBox2,
+  .flexBox3,
+  .flexBox4 {
+    width: 100%;
+  }
+  .flexClass4 {
+    flex-wrap: wrap;
+  }
+  .flexBox6 {
+    width: 95%;
+  }
+  .flexBox7 {
+    width: 95%;
+  }
+  .flexClassReverse {
+    flex-wrap: wrap-reverse;
+    margin: auto;
+  }
+}
 
-  @media only screen and (max-width: 500px){
-    .flexBox5{
-        width: 90%;
-    }
-    .flexClass3{
-        width: 90%;
-    }
+@media only screen and (max-width: 500px) {
+  .flexBox5 {
+    width: 90%;
   }
+  .flexClass3 {
+    width: 90%;
+  }
+}

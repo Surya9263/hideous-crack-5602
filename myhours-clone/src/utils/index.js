@@ -1,0 +1,26 @@
+export const landingImageData = [
+    {
+        id:1,
+        imgSrc:"https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/6000079c0b6e21682628f281_typefox%201.png"
+    },
+    {
+        id:2,
+        imgSrc:"https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/6000079cd7ceecebfc3f5519_kpmg_logo%201.png"
+    },
+    {
+        id:3,
+        imgSrc:"https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/6000079dfd768757fcf2ea64_logo-Impartner-1.png"
+    },
+    {
+        id:4,
+        imgSrc:"https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/6000079d3f7265588b6d1dbe_semaphore-logo.png"
+    },
+    {
+        id:5,
+        imgSrc:"https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/6000079d09b818dd84138753_aurora-logo-horiz-white%201.png"
+    },
+    {
+        id:6,
+        imgSrc:"https://uploads-ssl.webflow.com/5c77a918ef19681741be7bca/6000079d14844ef7226bb10a_logo_heading.png"
+    },
+]
